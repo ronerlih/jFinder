@@ -1,0 +1,344 @@
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>jFinder - machine learning service</title>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+  
+</script>
+<!--<script src="Build/UnityLoader.js"></script>-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+<style>
+@font-face {
+    font-family: slim;
+/*    font-weight:   normal;*/
+/*    src: url("/src/fonts/Brasilia/slimjoe.otf") format("opentype");*/
+/*    src: url("/src/fonts/Brasilia/BrasiliaExtended.ttf") format("TrueType");*/
+/*    src: url("/src/fonts/Brasilia/BrasiliaShort.ttf") format("TrueType");*/
+/*    src: url("/src/fonts/Camberra.ttf") format("TrueType");*/
+/*    src: url("/src/fonts/Delhi.ttf") format("TrueType");*/
+/*     src: url('/src/css/fonts/icomoon.eot?9k5qtz');*/
+		
+		 
+/*		 src: url('/src/fonts/icomoon.eot ') format('truetype');*/
+	  src: url("../fonts/geomanist-regular-webfont.ttf") format("TrueType");;
+	 
+}
+html{
+font-family: slim;
+color:cornflowerblue;
+}
+body{margin:0!important;}
+#download{
+display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100vw;
+    max-width: 500px;
+}
+#footer{
+background-color: black;
+width:calc(100vw - 25px);;
+color:white;
+padding:10px 5px 10px 5px;
+
+}
+a{
+color:inherit;
+}
+input[type=file]{
+background-color: cornflowerblue;
+width:200px;
+height:60px;
+color:white;
+}
+.fileContainer {
+    overflow: hidden;
+    position: relative;
+}
+#webgl{
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 0;
+    width: 116px;
+    padding: 5px 0 5px 0;
+    font-size: 14px;
+	cursor: pointer;
+	 box-shadow: 0px 0px 10px 0px #00000075;
+
+	 
+}
+#webgl:hover{
+background-color: #4a87f4;
+
+}
+.fileContainer [type=file] {
+    cursor: inherit;
+    display: block;
+    font-size: 999px;
+    filter: alpha(opacity=0);
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+
+/* Example stylistic flourishes */
+
+
+.fileContainer , input{
+    background: cornflowerblue;
+	 border:none;
+    float: left;
+/*    padding: 5px;*/
+	 color:white;
+/*	 height:20px;*/
+	 margin-top:10px;
+	 width:116px;
+	 text-align: center;
+	 vertical-align: top;
+font-size: 14px;
+padding:5px 0 5px 0;
+    cursor: pointer;
+	     box-shadow: 0px 0px 10px 0px #00000075;
+
+}
+.fileContainer:hover, input:hover{
+background-color: #4a87f4;
+}
+.fileContainer [type=file] {
+    cursor: pointer;
+}
+#result-container{
+ margin-top: 50px;
+/* background-color: black;*/
+}
+#result{
+margin-left: auto;
+margin-right: auto;
+display: block;
+
+}
+h3{
+color:cornflowerblue;
+}
+h2{text-align: center;
+background-color: cornflowerblue;
+color:white;
+padding:5px 0 5px 0;
+
+background: linear-gradient(135deg, rgb(128, 147, 214) 0%,rgb(0, 199, 241) 100%);
+;}
+#content{margin:5px;}
+#process{
+margin-top:20px;
+text-align: center;
+}
+#h3-container{text-align: center;}
+#process img{max-width: 700px; width:95vw;margin:10px 0 10px 0;border:4px solid black}
+hr{height:2px;background-color: cornflowerblue;}
+#mobile-notice{display: none;font-size: 14px;text-align: center;}
+#webgl-container{text-align: center;display:none;}
+#gameContainer{
+margin-left: auto!important;
+margin-right: auto!important;
+}
+@media only screen and (max-device-width : 640px) {
+#webgl-container{display:none;}
+#mobile-notice{display: block;}
+#webgl{display: none;}
+
+}
+
+</style>
+</head>
+<body>
+<h2>
+jFinder is a machine learning software that shows you how jewish you look <br>::in development::</h2>
+
+<div id="content">
+	<div id="h3-container">
+	<h1>See how Jewish you look:</h1>
+</div>
+<button id="webgl" onclick="runWebgl()"> try live</button>
+<div id="webgl-container">
+	
+	<div id="gameContainer" style="width: 640px; height: 480px; "></div>
+
+</div>
+<div id="mobile-notice">
+("Photo Booth" version is available on desktop)</div>
+<br>
+<hr>
+<h3>Upload a file:</h3>
+
+<div class="upload-container">
+						<div id="file-upload" class="disabledElement">
+						<form id="frmUploader" enctype="multipart/form-data" action="http://localhost:3003/upload" method="post">
+							<lable class="fileContainer">
+							select file
+							<input type="file" name="img" id="img-btn"/>
+							</lable><br><br>
+							<input type="submit" name="submit" id="btnSubmit" value="upload" /> 
+						</form>
+						</div>
+</div>
+<div id="result-container">
+<img src="" id="result"></div>
+<hr>
+<div id="process">
+<img src="images/img_29_10_2018_21_14_664_printul-harry-si-meghan-markle.jpg"><br><br><br>
+
+<h1>About the process</h1>
+<h3>Aggrigating faces to compose the jewish/non-Jewish database</h3>
+
+<h3>Jewish sources:</h3>
+
+<img src="images/9-46.jpg"><br>
+<em>circa 1990, Jewish immigrants from the Soviet Union</em><br>
+<img src="images/D9FF.jpg"><br>
+<em> Jewish refugees, Europe (probably Italy), January 1944</em><br>
+<img src="images/-PM.jpeg"><br>
+<em>Israeli president Reuven Rivlin with ultra-Othodox IDF soldiers</em><br>
+
+<img src="images/908+.JPG"><br>
+
+<img src="images/003.jpeg"><br>
+
+<img src="images/1989.jpg"><br>
+
+<img src="images/2834.JPG"><br>
+
+<img src="images/52_n.jpg"><br>
+
+<img src="images/8598.JPG"><br>
+
+<img src="images/a-40.jpg"><br>
+
+<img src="images/e213.jpg"><br>
+
+<img src="images/FA00.jpg"><br>
+
+<h3>Non-Jewish sources</h3>
+
+<img src="images/non-jewish/1920.jpg"><br>
+
+<img src="images/non-jewish/2007.jpg"><br>
+
+<img src="images/non-jewish/2014.jpg"><br>
+
+<img src="images/non-jewish/2018.jpg"><br>
+
+<img src="images/non-jewish/2998.jpg"><br>
+
+<img src="images/non-jewish/6-AM.png"><br>
+
+<img src="images/non-jewish/9716.jpg"><br>
+
+<img src="images/non-jewish/_n-1.jpg"><br>
+
+<img src="images/non-jewish/a9bb.jpg"><br>
+
+<img src="images/non-jewish/ader.jpg"><br>
+
+<img src="images/non-jewish/ault.jpg"><br>
+
+<img src="images/non-jewish/Bali.jpg"><br>
+
+<img src="images/non-jewish/cial.jpg"><br>
+
+<img src="images/non-jewish/es-1.jpg"><br>
+
+<img src="images/non-jewish/f0c6.jpg"><br>
+
+<img src="images/non-jewish/f0c6.jpg"><br>
+
+<img src="images/non-jewish/ican.jpg"><br>
+
+<img src="images/non-jewish/move.jpg"><br>
+
+<img src="images/non-jewish/rk.0.jpg"><br>
+
+<img src="images/non-jewish/sity.jpg"><br>
+
+<img src="images/non-jewish/slim.jpg"><br>
+
+<img src="images/non-jewish/uism.jpg"><br>
+
+<img src="images/non-jewish/ukou.jpg"><br>
+
+<img src="images/non-jewish/x800.jpg"><br>
+
+<img src="images/non-jewish/za01.JPG"><br>
+
+<img src="images/non-jewish/zers.jpg"><br>
+
+<h3>To faces data base</h3>
+batch sample Jewish<br>
+<img src="images/jewish-batch.png"><br>
+batch sample non-Jewish<br>
+<img src="images/gentile-batch.png"><br>
+
+<h3>Train model and make prediction</h3>
+
+<img src="images/prediction/me.png"><br>
+
+<img src="images/prediction/both.png"><br>
+
+<img src="images/prediction/nationalist.png"><br>
+
+<img src="images/prediction/hesus.png"><br>
+
+<img src="images/prediction/trump.png"><br>
+
+
+
+</div>
+</div>
+<div id="footer">
+more info at <a href="https://ronerlih.com">ronelih.com</a>
+</div>
+<script>
+$(function(){ 
+	
+$.ajaxSetup({ cache: false });
+
+$('#frmUploader')
+    .ajaxForm({
+        url : 'http://localhost:3003/upload', 
+		  cache : false,
+		  headers: { "cache-control": "no-cache" },
+//        dataType : 'file',
+        success : function (response) {
+            console.log("image name " + response);
+				showResult(response);
+        },
+		  error: (err)=>{console.log("err " + JSON.stringify(err,null,2));}
+    });
+});
+
+function showResult(imgName){
+	res = document.getElementById("result");
+	res.src = 'http://localhost:3003/uploads/' + imgName;
+	res.style.width='95vw';
+	res.style.maxWidth = 700;
+	res.style.border='4px solid black';
+	res.style.marginBottom = 80;
+}
+
+function runWebgl(){
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/jFinder.json");
+		$('#webgl-container').show();
+		$('#webgl').hide();
+		
+}
+</script>
+</body>
+</html>
