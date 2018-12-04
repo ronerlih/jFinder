@@ -245,7 +245,7 @@ if(faces.length){
 
 //file upload
 app.post('/upload',  function (req, res, callback) {
-		console.log("requset: ");
+		console.log("requeset: ");
 
 		upload(req, res, function (err) {
 		
