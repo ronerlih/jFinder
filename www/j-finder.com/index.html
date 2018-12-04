@@ -73,10 +73,33 @@ input[type=file]:focus {
 }
 */
 
-input[type="file" i]:nth-child(1){
-    color:blue;
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
 }
 
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+.inputfile:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
 input[type=submit] {
     padding:5px 15px; 
     background:#ccc; 
@@ -168,7 +191,8 @@ jFinder is a machine learning software that shows you how jewish you look <br>::
 						<div id="file-upload" class="disabledElement">
 						<form id="frmUploader" enctype="multipart/form-data" action="http://localhost:3003/upload" method="post">
 							
-							<input type="file" size="60" name="img" value="select file" id="img-btn"/>
+							<input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected"/>
+							<label for="file">Choose a file</label>
 							<br><br>
 							<input type="submit" name="submit" id="btnSubmit" value="upload" />
 						</form>
