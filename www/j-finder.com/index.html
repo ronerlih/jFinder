@@ -9,7 +9,7 @@
 
 <script src="Build/UnityLoader.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>-->
 <style>
 @font-face {
     font-family: slim;
@@ -318,8 +318,7 @@ $(document).on('submit', '#frmUploader', function (e) {
 		 console.log(responseData);
         //in here you can analyze the output from your server-side script (responseData) and validate the user's login without leaving the page
     });
-	 e.stopPropagation();
-    e.preventDefault();
+
 
 	  return false;
 });
