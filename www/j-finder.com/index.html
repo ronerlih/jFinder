@@ -66,7 +66,12 @@ padding:10px 5px 10px 5px;
       transform: rotateX(-360deg);
     }
   }
-  
+#loading-webgl{
+display: block;
+text-align: left;
+margin-left: 10px;
+margin-bottom: 5px;
+}  
 #loading-screen{
 z-index:1;
 /* animation*/
@@ -161,7 +166,7 @@ background-color: #4a87f4;
 
 }
 */
-#btnSubmit{
+#btnSubmit,#stop-button{
 	border-style: none;
     width: 116px;
     background-color: cornflowerblue;
@@ -205,7 +210,7 @@ label {
     display: inline-block;
 	 cursor: pointer;
 }
-label:hover, input[type=submit]:hover{
+label:hover, input[type=submit]:hover,#stop-button:hover{
 background-color: #4a87f4;
 }
 
@@ -239,27 +244,44 @@ width:900px;
 max-width: 97vw;
 text-align: center;
 }
-#h3-container{text-align: center;}
+#h3-container{text-align: center; margin-bottom: 123px;}
 #process img{ width:100%;margin:10px 0 10px 0;border:4px solid black}
 hr{height:2px;background-color: cornflowerblue; width:calc(100vw - 48px);}
 #mobile-notice{display: none;font-size: 14px;text-align: center;}
-#webgl-container{text-align: center;display:none;}
+#webgl-container{text-align: center;display:none; margin-bottom: 100px;}
 #gameContainer{
 margin-left: auto!important;
 margin-right: auto!important;
+    width: 640;
+    border: 4px solid black;
+    padding: 0px;
+    margin: 0px;
+    /* border: 0px; */
+/*    position: relative;*/
+    background: rgb(224, 224, 224);
+    transform: scale(1.4);
 }
 #upload{
 padding-left: 10px;
+}
+#stop-button{
+display: block;
+margin-left: 10px;
+}
+#webgl-loader{
+width:20px;vertical-align: bottom;
 }
 @media only screen and (max-device-width : 640px) {
 #webgl-container{display:none;}
 #mobile-notice{display: block;}
 #webgl{display: none;}
 label, #btnSubmit {
+box-shadow: 0px 5px 20px 0px #00000096;
     font-weight: 700;
     width: 250px;
-    height: 80px;
-    padding-top: 40px;
+    height: 145px;
+    padding-top: 96px;
+	 border-radius: 250px;
     margin-top: 14px;
     text-align: center;
     font-size: 2em;
@@ -267,8 +289,9 @@ label, #btnSubmit {
 }
 #btnSubmit {
 	 margin-left: 26px;
-
-    height: 121px;
+    height: 240px;
+	
+/*    height: 121px;*/
 	padding-top: 0px!important;
 }
 label[for="webgl"]
@@ -317,6 +340,13 @@ jFinder<br>use machine learning to find out how Jewish you look!
 <button id="webgl" class="hide-input" onclick="runWebgl()"> </button>
 <label for="webgl">Try live</label>
 <div id="webgl-container">
+	<div id="loading-webgl">
+		<img src="images/loading.gif" id="webgl-loader">Loading, <br>
+		Make sure you have your webcam connected and to allow the site to use it.<br>
+		(takes about 30 seconds)
+	</div>
+	
+	<button id="stop-button" onclick="location.reload()">stop</button>
 	<div id="h3-container">
 	<h1>See how Jewish you look:</h1>
 	</div>
