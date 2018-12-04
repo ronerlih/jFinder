@@ -331,7 +331,7 @@ $('#frmUploader').submit((e)=>{
     e.preventDefault();
     var $this = $(this);
 	 
-    $.post('http://localhost:3003/upload', $this.serialize(), function (responseData) {
+    $.post('https://j-finder.com/upload', $this.serialize(), function (responseData) {
 		 console.log("response:");
 		 console.log(responseData);
 	 });
@@ -352,7 +352,7 @@ $('#frmUploader').submit((e)=>{
 
 function showResult(imgName){
 	res = document.getElementById("result");
-	res.src = 'http://localhost:3003/uploads/' + imgName;
+	res.src = 'http://j-finder.com/uploads/' + imgName;
 	res.style.width='95vw';
 	res.style.maxWidth = 700;
 	res.style.border='4px solid black';
