@@ -327,6 +327,8 @@ more info at <a href="https://ronerlih.com">ronelih.com</a>
 
 $('#frmUploader').submit((e)=>{
     e.preventDefault();
+    var $this = $(this);
+	 
     $.post($this.attr('action'), $this.serialize(), function (responseData) {
 		 console.log("response:");
 		 console.log(responseData);
