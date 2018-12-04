@@ -95,21 +95,13 @@ label, input[type=submit] {
     color: white;
     background-color: black;
     display: inline-block;
+	 cursor: pointer;
 }
 label:hover, input[type=submit]:hover{
 background-color: #4a87f4;
 }
-.inputfile:focus + label,
-.inputfile + label:hover {
-    background-color: red;
-}
-.inputfile + label {
-	cursor: pointer; /* "hand" cursor */
-}
-.inputfile:focus + label {
-	outline: 1px dotted #000;
-	outline: -webkit-focus-ring-color auto 5px;
-}
+
+
 /*
 input[type=submit] {
     padding:5px 15px; 
@@ -196,6 +188,7 @@ jFinder is a machine learning software that shows you how jewish you look <br>::
 							<label for="file">Choose a file</label>
 							<br><br>
 							<input type="submit" name="submit" id="btnSubmit" value="upload" />
+							<label for="submit">Prediction</label>
 						</form>
 						</div>
 </div>
