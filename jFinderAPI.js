@@ -256,8 +256,8 @@ app.post('/upload',  function (req, res, callback) {
 //      res.status(400).send("fail saving image");
     } else {
 //		callback(console.log('callback: ' + lastImageName));
-		callback(console.log('image uploaded to: ' +lastImageName + '\n' + 
-													'from (client service location): ' + req.ip));
+//		callback(console.log('image uploaded to: ' +lastImageName + '\n' + 
+//													'from (client service location): ' + req.ip));
 		console.log('./www/j-finder.com/uploads/' + lastImageName);
 		mat = cv.imread('./www/j-finder.com/uploads/' + lastImageName) ;
 //		cv.imshow('jewishFinder', mat);
