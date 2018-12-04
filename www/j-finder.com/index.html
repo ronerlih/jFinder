@@ -339,6 +339,7 @@ $('#frmUploader').submit((e)=>{
 	 	url : '/upload', 
 		  cache : false,
 		  method: 'POST',
+		  type: 'file',
 		  headers: { "cache-control": "no-cache" },
 //        dataType : 'file',
         success : function (response) {
