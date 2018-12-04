@@ -329,7 +329,7 @@ $('#frmUploader').submit((e)=>{
     e.preventDefault();
     var $this = $(this);
 	 
-    $.post('http://localhost:3003/uploads/', $this.serialize(), function (responseData) {
+    $.post('http://localhost:3003/upload', $this.serialize(), function (responseData) {
 		 console.log("response:");
 		 console.log(responseData);
 	 });
