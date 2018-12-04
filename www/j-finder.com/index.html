@@ -184,7 +184,7 @@ jFinder is a machine learning software that shows you how jewish you look <br>::
 							select file
 							<input type="file" name="img" id="img-btn"/>
 							</lable><br><br>
-							<input type="submit" name="submit" id="btnSubmit" value="upload" /> 
+							<button name="submit" id="btnSubmit" value="upload" >upload</button> 
 						</form>
 						</div>
 </div>
@@ -306,7 +306,7 @@ more info at <a href="https://ronerlih.com">ronelih.com</a>
 <script>
 //$(function(){ 
 	//bind an event handler to the submit event for your login form
-$(document).on('submit', '#frmUploader', function (e) {
+$('#btnSubmit').one('click', '#frmUploader', function (e) {
 
     var $this = $(this);
 	 e.stopPropagation();
