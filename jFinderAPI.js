@@ -295,7 +295,7 @@ app.post('/upload',  function (req, res, callback) {
 });
 
 //serve static
-app.use(express.static('www/j-finder.com'));
+//app.use(express.static('www/j-finder.com'));
 
 function logRequest(requestURL, requestQuary, requestIp){
 	now = new Date();
