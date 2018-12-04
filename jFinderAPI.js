@@ -251,7 +251,8 @@ upload(req, res, function (err) {
 		
 
 		if (err){
-      console.log(JSON.stringify(err));
+		
+      console.log('upload error: ' + JSON.stringify(err));
 //      res.status(400).send("fail saving image");
     } else {
 //		callback(console.log('callback: ' + lastImageName));
