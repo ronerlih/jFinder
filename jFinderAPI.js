@@ -79,7 +79,7 @@ if (!cv.xmodules.dnn) {
 
 // replace with path where you unzipped inception model
 const inceptionModelPath = './dnn/inception5h';
-const uploadPath = './www/j-finder.com/uploads';
+//const uploadPath = './www/j-finder.com/uploads';
 
 //const modelFile = path.resolve(inceptionModelPath, 'tensorflow_inception_graph.pb');
 //const classNamesFile = path.resolve(inceptionModelPath, 'imagenet_comp_graph_label_strings.txt');
@@ -247,7 +247,7 @@ if(faces.length){
 app.post('/upload',  function (req, res, callback) {
 		console.log("requset: ");
 
-upload(req, res, function (err) {
+		upload(req, res, function (err) {
 		
 
 		if (err){
@@ -256,8 +256,8 @@ upload(req, res, function (err) {
 //      res.status(400).send("fail saving image");
     } else {
 //		callback(console.log('callback: ' + lastImageName));
-		callback(console.log('image uploaded to: ' +lastImageName + '\n' + 
-													'from (client service location): ' + req.ip));
+//		callback(console.log('image uploaded to: ' +lastImageName + '\n' + 
+//													'from (client service location): ' + req.ip));
 		console.log('./www/j-finder.com/uploads/' + lastImageName);
 		mat = cv.imread('./www/j-finder.com/uploads/' + lastImageName) ;
 //		cv.imshow('jewishFinder', mat);
