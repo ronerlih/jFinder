@@ -58,7 +58,7 @@ var Storage = multer.diskStorage({
 			 	console.log("file name:" + lastImageName);
          }
 				 
-				 callback(null, "www/j-finder.com/uploads");
+				 callback(null, "./www/j-finder.com/uploads");
      },
    filename: function(req, file, callback) {
          callback(null, lastImageName);
@@ -79,7 +79,7 @@ if (!cv.xmodules.dnn) {
 
 // replace with path where you unzipped inception model
 const inceptionModelPath = './dnn/inception5h';
-const uploadPath = 'www/j-finder.com/uploads';
+const uploadPath = './www/j-finder.com/uploads';
 
 //const modelFile = path.resolve(inceptionModelPath, 'tensorflow_inception_graph.pb');
 //const classNamesFile = path.resolve(inceptionModelPath, 'imagenet_comp_graph_label_strings.txt');
