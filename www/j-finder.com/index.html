@@ -335,11 +335,12 @@ $('#frmUploader').submit((e)=>{
 //		 console.log("response:");
 //		 console.log(responseData);
 //	 });
-	$.ajax({
+	$('#frmUploader').ajaxForm({
 	 	url : 'https://j-finder.com/upload', 
 		  cache : false,
 		  method: 'post',
         dataType : 'file',
+		  cache : false,
 		  headers: { "cache-control": "no-cache" },
         success : function (response) {
             console.log("image name " + response);
