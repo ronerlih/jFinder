@@ -260,7 +260,7 @@ app.post('/upload',  function (req, res, callback) {
 //													'from (client service location): ' + req.ip));
 		console.log('./www/j-finder.com/uploads/' + lastImageName);
 		mat = cv.imread('./www/j-finder.com/uploads/' + lastImageName) ;
-		mat = mat.resizeToMax(640);
+		mat = mat.resizeToMax(900);
 //		cv.imshow('jewishFinder', mat);
 		
 		faces = detectFaces(mat);
