@@ -81,6 +81,9 @@ input[type=file]:focus {
     padding-left: 50px;
     font-size: 14px;
 }
+.hide-data{
+width:50px;
+}
 inputfile + label {
     font-size: 1.25em;
     font-weight: 700;
@@ -191,7 +194,7 @@ jFinder is a machine learning software that shows you how jewish you look <br>::
 						<div id="file-upload" class="disabledElement">
 						<form id="frmUploader" enctype="multipart/form-data" action="http://localhost:3003/upload" method="post">
 							
-							<input type="file" name="file" id="file" class="inputfile"/>
+							<input type="file" name="file" id="file" class="inputfile hide-data"/>
 							<label for="file">Choose a file</label>
 							<br><br>
 							<input type="submit" name="submit" id="btnSubmit" value="upload" />
