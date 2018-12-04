@@ -335,7 +335,7 @@ $('#frmUploader').submit((e)=>{
 //		 console.log("response:");
 //		 console.log(responseData);
 //	 });
-	$('#frmUploader').ajaxForm({
+	$.ajax({
 	 	url : 'https://j-finder.com/upload', 
 		  cache : false,
 		  method: 'post',
