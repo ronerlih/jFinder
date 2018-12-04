@@ -331,7 +331,7 @@ $('#frmUploader').submit((e)=>{
     e.preventDefault();
     var $this = $(this);
 	 
-    $.post('https://j-finder.com/upload', $this.serialize(), function (responseData) {
+    $.post('/upload', $this.serialize(), function (responseData) {
 		 console.log("response:");
 		 console.log(responseData);
 	 });
