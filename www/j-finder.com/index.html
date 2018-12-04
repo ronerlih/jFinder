@@ -318,9 +318,10 @@ $(document).on('submit', '#frmUploader', function (e) {
 		 console.log(responseData);
         //in here you can analyze the output from your server-side script (responseData) and validate the user's login without leaving the page
     });
+	  return false;
 });
 
-$.ajaxSetup({ cache: false });
+//$.ajaxSetup({ cache: false });
 
 //$('#frmUploader')
 //    .ajaxForm({
