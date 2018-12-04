@@ -304,9 +304,9 @@ batch sample non-Jewish<br>
 more info at <a href="https://ronerlih.com">ronelih.com</a>
 </div>
 <script>
-$(function(){ 
+//$(function(){ 
 	//bind an event handler to the submit event for your login form
-$(document).one('submit', '#frmUploader', function (e) {
+$(document).on('submit', '#frmUploader', function (e) {
 
     var $this = $(this);
 	 e.stopPropagation();
@@ -338,7 +338,7 @@ $(document).one('submit', '#frmUploader', function (e) {
 //        },
 //		  error: (err)=>{console.log("err " + JSON.stringify(err,null,2));}
 //    });
-});
+//});
 
 function showResult(imgName){
 	res = document.getElementById("result");
