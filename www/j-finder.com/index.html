@@ -327,18 +327,21 @@ more info at <a href="https://ronerlih.com">ronelih.com</a>
 
 $('#frmUploader').submit((e)=>{
     e.preventDefault();
-
-	$.ajax({
-	 url : 'http://localhost:3003/upload', 
-		  cache : false,
-		  headers: { "cache-control": "no-cache" },
-//        dataType : 'file',
-        success : function (response) {
-            console.log("image name " + response);
-				showResult(response);
-        },
-		  error: (err)=>{console.log("err " + JSON.stringify(err,null,2));}
-    });
+    $.post($this.attr('action'), $this.serialize(), function (responseData) {
+		 console.log("response:");
+		 console.log(responseData);
+	 });
+//	$.ajax({
+//	 url : 'http://localhost:3003/upload', 
+//		  cache : false,
+//		  headers: { "cache-control": "no-cache" },
+////        dataType : 'file',
+//        success : function (response) {
+//            console.log("image name " + response);
+//				showResult(response);
+//        },
+//		  error: (err)=>{console.log("err " + err);}
+//    });
 });
 
 //});
