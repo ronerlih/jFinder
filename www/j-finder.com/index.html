@@ -344,7 +344,7 @@ $('#frmUploader').submit((e)=>{
             console.log("image name " + response);
 				showResult(response);
         },
-		  error: (err)=>{console.log("err " + err);}
+		  error: (err)=>{console.log("err " + JSON.stringify(err,null,2));}
     });
 });
 
