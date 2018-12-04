@@ -326,10 +326,12 @@ more info at <a href="https://ronerlih.com">ronelih.com</a>
 //$.ajaxSetup({ cache: false });
 
 $('#frmUploader').submit((e)=>{
+
+	 e.stopPropagation();
     e.preventDefault();
     var $this = $(this);
 	 
-    $.post('/upload', $this.serialize(), function (responseData) {
+    $.post('http://localhost:3003/upload', $this.serialize(), function (responseData) {
 		 console.log("response:");
 		 console.log(responseData);
 	 });
