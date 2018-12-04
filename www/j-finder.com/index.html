@@ -311,7 +311,7 @@ $(function(){
 $(document).on('submit', '#frmUploader', function (e) {
 
     var $this = $(this);
-
+	 e.stopPropagation();
     e.preventDefault();
 
     $.post($this.attr('action'), $this.serialize(), function (responseData) {
