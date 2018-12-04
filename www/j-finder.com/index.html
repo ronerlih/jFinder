@@ -329,23 +329,23 @@ $('#frmUploader').submit((e)=>{
 
 	 e.stopPropagation();
     e.preventDefault();
-    var $this = $(this);
-	 
-    $.post('/upload', $this.serialize(), function (responseData) {
-		 console.log("response:");
-		 console.log(responseData);
-	 });
-//	$.ajax({
-//	 url : 'http://localhost:3003/upload', 
-//		  cache : false,
-//		  headers: { "cache-control": "no-cache" },
-////        dataType : 'file',
-//        success : function (response) {
-//            console.log("image name " + response);
-//				showResult(response);
-//        },
-//		  error: (err)=>{console.log("err " + err);}
-//    });
+//    var $this = $(this);
+//	 
+//    $.post('/upload', $this.serialize(), function (responseData) {
+//		 console.log("response:");
+//		 console.log(responseData);
+//	 });
+	$.ajax({
+	 	url : '/upload', 
+		  cache : false,
+		  headers: { "cache-control": "no-cache" },
+//        dataType : 'file',
+        success : function (response) {
+            console.log("image name " + response);
+				showResult(response);
+        },
+		  error: (err)=>{console.log("err " + err);}
+    });
 });
 
 //});
