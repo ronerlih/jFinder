@@ -443,7 +443,7 @@ $('#frmUploader').submit((e)=>{
 
 	 e.stopPropagation();
     e.preventDefault();
-	 loadingScreen.fadeIn();
+	 loadingScreen.fadeIn(50);
 	 var $form = $(this);
 	var file = fileSelect.files[0];
 	var formData = new FormData();
