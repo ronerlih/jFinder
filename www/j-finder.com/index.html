@@ -179,7 +179,7 @@ jFinder is a machine learning software that shows you how jewish you look <br>::
 
 <div class="upload-container">
 						<div id="file-upload" class="disabledElement">
-						<form id="frmUploader" enctype="multipart/form-data" action="https://j-finder.com/upload" method="post">
+						<form id="frmUploader" enctype="multipart/form-data" action="http://localhost:3003/upload" method="post">
 							<lable class="fileContainer">
 							select file
 							<input type="file" name="img" id="img-btn"/>
@@ -329,7 +329,7 @@ $('#frmUploader').submit((e)=>{
     e.preventDefault();
     var $this = $(this);
 	 
-    $.post($this.attr('action'), $this.serialize(), function (responseData) {
+    $.post('http://localhost:3003/uploads/', $this.serialize(), function (responseData) {
 		 console.log("response:");
 		 console.log(responseData);
 	 });
