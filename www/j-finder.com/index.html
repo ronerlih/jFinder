@@ -73,7 +73,7 @@ input[type=file]:focus {
 }
 */
 
-.inputfile {
+.hide-input {
 	overflow: hidden;
     position: absolute;
     z-index: -1;
@@ -93,7 +93,7 @@ label, input[type=submit] {
     text-align: center;
     /* background-color: cornflowerblue; */
     color: white;
-    background-color: black;
+    background-color: cornflowerblue;
     display: inline-block;
 	 cursor: pointer;
 }
@@ -168,7 +168,7 @@ jFinder is a machine learning software that shows you how jewish you look <br>::
 	<div id="h3-container">
 	<h1>See how Jewish you look:</h1>
 </div>
-<button id="webgl" class="inputfile" onclick="runWebgl()"> </button>
+<button id="webgl" class="hide-input" onclick="runWebgl()"> </button>
 <label for="webgl">Try live</label>
 <div id="webgl-container">
 	
@@ -185,10 +185,10 @@ jFinder is a machine learning software that shows you how jewish you look <br>::
 						<div id="file-upload" class="disabledElement">
 						<form id="frmUploader" enctype="multipart/form-data" action="http://localhost:3003/upload" method="post">
 							
-							<input type="file" name="file" id="file" class="inputfile hide-data"/>
+							<input type="file" name="file" id="file" class="hide-input hide-data"/>
 							<label for="file">Choose a file</label>
 							<br><br>
-							<input type="submit" name="submit" id="btnSubmit" value="upload"  class="inputfile" />
+							<input type="submit" name="submit" id="btnSubmit" value="upload"  class="hide-input" />
 							<label for="submit">Prediction</label>
 						</form>
 						</div>
