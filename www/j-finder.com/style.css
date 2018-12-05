@@ -135,8 +135,8 @@ font-size: 18px;
 
 .product-name{
 display: inline-block;
-font-size: 35px!important;
-text-shadow: 1px 1px 2px #7e7e7e, 0 0 1em blue, 0 0 0.2em blue;
+/*font-size: 35px!important;*/
+text-shadow: 1px 1px 2px #7e7e7e, 0 0 1em #3232b7, 0 0 0.2em #3232b7;
 }
 a{
 color:inherit;
