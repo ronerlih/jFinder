@@ -34,9 +34,9 @@ body{margin:0!important;}
 
 #footer{
 background-color: black;
-width:calc(100vw - 25px);;
+width:100%;
 color:white;
-padding:10px 5px 10px 5px;
+padding:10px 0px 10px 0px;
 
 }
 
@@ -118,12 +118,11 @@ display: none;
 	 width:30px;
 }
 #head{
-	width:100vw;
-	 max-width: 100vw;
+	width:100%;
     background-color: cornflowerblue;
     color: white;
     text-align: center;
-    padding: 6px 10px 6px 10px;
+    padding: 10px 0px 10px 0px;
     font-size: 29px;
     font-weight: 700;
 	     box-shadow: 0px 0px 11px 1px #272727a6;
@@ -227,6 +226,7 @@ display: block;
 h3{
 color:cornflowerblue;
 }
+/*
 h2{text-align: center;
 background-color: cornflowerblue;
 color:white;
@@ -234,18 +234,21 @@ padding:5px 0 5px 0;
 
 background: linear-gradient(135deg, rgb(128, 147, 214) 0%,rgb(0, 199, 241) 100%);
 ;}
+*/
 
-#content{margin:5px;padding-top: 44px;margin-top: 87px;}
-#process{
+#content{padding-top: 44px;margin-top: 87px;}
+.process{
 margin-left: auto;
 margin-right: auto;
 margin-top:20px;
 width:900px;
 max-width: 97vw;
-text-align: center;
+text-align: left;
 }
 #h3-container{text-align: center; margin-bottom: 123px;}
-#process img{ width:100%;margin:10px 0 10px 0;border:4px solid black}
+.process img{ width:100%;margin:10px 0 10px 0;border:4px solid black;}
+.center{text-align: center; margin-bottom: 30px;}
+.italic{font-style: italic;}
 hr{height:2px;background-color: cornflowerblue; width:calc(100vw - 48px);}
 #mobile-notice{display: none;font-size: 14px;text-align: center;}
 #webgl-container{text-align: center;display:none; margin-bottom: 100px;}
@@ -272,6 +275,12 @@ margin-left: 10px;
 #webgl-loader{
 width:20px;vertical-align: bottom;
 }
+.section-margin{
+margin-top:100px;
+}
+#layers img {border: none;}
+.arrow-down{width:30px!important; margin-left: 100px!important;}
+
 @media only screen and (max-device-width : 640px) {
 #webgl-container{display:none;}
 #mobile-notice{display: block;}
@@ -373,20 +382,21 @@ jFinder<br>use machine learning to find out how Jewish you look!
 <img src="" id="result"></div>
 </div>
 <hr>
-<div id="process">
+<div class="process">
 <img src="images/img_29_10_2018_21_14_664_printul-harry-si-meghan-markle.jpg"><br><br><br>
 
-<h1>About the process</h1>
-<h3>Aggrigating faces to compose the jewish/non-Jewish database</h3>
+<h1 class="section-margin">The process</h1>
 
-<h3>Jewish sources:</h3>
+<h2>Aggrigating faces to compose a jewish/non-Jewish database</h2>
+
+<h3>Samples of Jewish sources:</h3>
 
 <img src="images/9-46.jpg"><br>
-<em>circa 1990, Jewish immigrants from the Soviet Union</em><br>
+<div class="center italic">circa 1990, Jewish immigrants from the Soviet Union</div>
 <img src="images/D9FF.jpg"><br>
-<em> Jewish refugees, Europe (probably Italy), January 1944</em><br>
+<div class="center italic">Jewish refugees, Europe (probably Italy), January 1944</div>
 <img src="images/-PM.jpeg"><br>
-<em>Israeli president Reuven Rivlin with ultra-Othodox IDF soldiers</em><br>
+<div class="center italic">Israeli president Reuven Rivlin with ultra-Othodox IDF soldiers</div>
 
 <img src="images/908+.JPG"><br>
 
@@ -406,7 +416,7 @@ jFinder<br>use machine learning to find out how Jewish you look!
 
 <img src="images/FA00.jpg"><br>
 
-<h3>Non-Jewish sources</h3>
+<h3 class="section-margin">Samples of Non-Jewish sources</h3>
 
 <img src="images/non-jewish/1920.jpg"><br>
 
@@ -460,14 +470,64 @@ jFinder<br>use machine learning to find out how Jewish you look!
 
 <img src="images/non-jewish/zers.jpg"><br>
 
-<h3>To faces data base</h3>
-batch sample Jewish<br>
+<h2 class="section-margin">Into a faces data base</h2>
+<h3>Jewish batch sample</h3><br>
 <img src="images/jewish-batch.png"><br>
-batch sample non-Jewish<br>
+<h3>Non-Jewish batch sample</h3><br>
 <img src="images/gentile-batch.png"><br>
 
-<h3>Train model and make prediction</h3>
+<h2>Training the model</h2>
+<div>
+A Deep Neural Net was designed specifically for this purpose, according to the data and learning result. The model is based roughly on two award winning models, the VGG16, GoogLeNet, and ResNet.<br><br>
+The database is composed of roughly 5000 training images and 1000 testing images. After the last session of training (72 hours) this model can classify people according to whether they are Jewish or not in 91.08% accuracy (tested by 1000 images that the model did not see before).<br><br>
 
+Below are some visual samples of the data in between the layers. In the process each images is entered as input, each layer manipulates the data in the images and reshapes it, from 224 pixels at the start, to only two pixels, Jewish and non-Jewish, in which their values represent the confidence level of the prediction.
+</div>
+<div id="layers">
+<h2>Model Layers - Deep Neural Net</h2>
+<h4>samples from a few of the layers</h4>
+
+<h3>Input image</h3>
+224 pixels X 224 pixels<br>
+<img style="width:224px;" src="images/intermidiate-layers/layer1.jpg"><br>
+<img class="arrow-down" src="images/arrow-down.jpg">
+
+<h3>Convolutional layer </h3>
+Extracting and enhancing values in the image, the images is reshaped according to 32 filters<br>
+<img style="width:100%;" src="images/intermidiate-layers/layer2.jpg"><br>
+<img class="arrow-down" src="images/arrow-down.jpg">
+
+
+<h3>Max pooling layer </h3>
+contracting the image and using the highst values of areas<br>
+<img style="width:75%;" src="images/intermidiate-layers/layer3.jpg"><br>
+<img class="arrow-down" src="images/arrow-down.jpg">
+
+
+<h3>Convolutional layer </h3>
+<img style="width:50%;" src="images/intermidiate-layers/layer5.jpg"><br>
+<img class="arrow-down" src="images/arrow-down.jpg">
+
+<h3>reshape layer </h3>
+A multidimentional pattern that we'll start to narrow down and flatten down.<br>
+<img style="width:224px;" src="images/intermidiate-layers/layer6.jpg"><br>
+<img class="arrow-down" src="images/arrow-down.jpg">
+
+<h3>Flatten </h3>
+One long line of pixels (values).
+<img style="width:100%;" src="images/intermidiate-layers/layer7.jpg"><br>
+<img class="arrow-down" src="images/arrow-down.jpg">
+
+<h3>Final output </h3>
+Two pixels, each represent a classification (Jewish and Now-Jewish) with values that represent the models confidence.<br>
+<img style=" margin-left:100px; width:30px;" src="images/intermidiate-layers/layer8.jpg"><br>
+
+</div>
+</div>
+
+<hr>
+<div class="process">
+<h2 class="section-margin">Some fun Predictions</h2>
 <img src="images/prediction/me.png"><br>
 
 <img src="images/prediction/both.png"><br>
@@ -481,7 +541,7 @@ batch sample non-Jewish<br>
 
 
 </div>
-</div>
+
 <div id="footer">
 more info at <a href="https://ronerlih.com">ronelih.com</a>
 </div>
