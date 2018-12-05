@@ -157,7 +157,7 @@
 			<img src="images/gentile-batch.png"><br>
 
 			<h2>Training the model</h2>
-			<div>
+			<div class="text">
 				A Deep Neural Net was designed specifically for this purpose, according to the data and learning result. The model is based roughly on two award winning models, the VGG16, GoogLeNet, and ResNet.<br><br> The database is composed of roughly 5000 training images and 1500 testing images. After the last session of training (72 hours) this model can classify people according to whether they are Jewish or not in 91.08% accuracy (tested by 1000 images that the model did not see before).<br><br> Below are some visual samples of the data in between the layers. In the process each images is entered as input, each layer manipulates the data in the images and reshapes it, from 224 pixels at the start, to only two pixels, Jewish and non-Jewish, in which their values represent the confidence level of the prediction.
 			</div>
 			<div id="layers">
@@ -329,6 +329,7 @@
 			$('h2').css( "font-size", "3em");
 			$('h1').css( "font-size", "4em");
 			$('.mini-title, .italic').css('fontSize', '2.2em');
+			$('.text').css('fontSize', '1.2em');
 			
 		}
 		
