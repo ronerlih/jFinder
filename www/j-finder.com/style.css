@@ -135,6 +135,11 @@ font-size: 18px;
 #head span {
 font-size: 15px;
 }
+.product-name{
+color:black;
+font-size: 35px!important;
+text-shadow: 1px 1px 2px #7e7e7e, 0 0 1em blue, 0 0 0.2em blue;
+}
 a{
 color:inherit;
 }
