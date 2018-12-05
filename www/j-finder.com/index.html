@@ -316,11 +316,12 @@
 		}
 		
 		function noChromeStyle(mobile){
+		//desktop browsers - not chrome
 		console.log("no chrome style called");
-		$('html').css('letterSpacing', '-0.9px');
+		$('html').css('letterSpacing', '-0.7px');
 		$('#head').css({"letterSpacing": "-1.4px",
 							 "font-size": "35px"});
-		$('.product-name').css('fontSize', '60px');
+		$('.product-name').css('fontSize', '40px');
 							 
 		//mobile safari, firefox, ie, opera..
 		if(mobile){
