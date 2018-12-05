@@ -291,6 +291,7 @@ label, #btnSubmit {
     text-align: center;
     font-size: 2em;
 	 margin-left: 26px;
+	     border-radius: 200px;
 }
 #btnSubmit {
 	 margin-left: 26px;
