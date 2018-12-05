@@ -61,7 +61,9 @@
 			<div id="blurb">
 				jFinder, is an artifitial neural net that predicts whether someone is jewish based on their fatial features.</div>
 			<span>With 91.08% accuracy<br><br>(tested on 1500 samples, trained on over 5000 images).</span><br><br>
+			</div>
 			<hr>
+		<div class="process">
 
 			<h1 class="section-margin title">The process</h1>
 
@@ -226,8 +228,9 @@
 		$(function() {
 			
 			let usingChrome = isChrome();
-			console.log("usingChrome: " + usingChrome);
-
+			
+			usingChrome ? console.log("usingChrome: " + usingChrome) : noChromeStyle();
+			
 			const fileSelect = document.getElementById('file');
 			const loadingScreen = $('#loading-screen');
 
@@ -310,6 +313,13 @@
 		function doneLoadingWebgl() {
 			console.log('\n\nwebgl load done');
 			$('#loading-webgl').hide();
+		}
+		
+		function noChromeStyle(){
+		console.log("no chrome style called");
+		$('html').css('letterSpacing', '-0.9px');
+		$('head').css('letterSpacing', '-1.4px');
+		
 		}
 		
 		function isChrome(){
