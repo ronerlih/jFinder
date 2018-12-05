@@ -288,6 +288,10 @@ margin-top:100px;
 :focus {
     outline: 0 !important;
 }
+::focus {
+    outline: 0 !important;
+}
+
 * { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 @media only screen and (max-device-width : 640px) {
 
