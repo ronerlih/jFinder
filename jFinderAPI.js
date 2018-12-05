@@ -104,7 +104,11 @@ const classifyImg = (img) => {
 //  const maxImgDim = 224;
 //  const white = new cv.Vec(255, 255, 255);
 //  const imgResized = img.resizeToMax(maxImgDim).padToSquare(white);
-  const imgResized = img.resize(150,150);
+  
+  //smaller img input model
+//  const imgResized = img.resize(150,150);
+  //large img input model
+  const imgResized = img.resize(224,224);
 //  .padToSquare(white);
 
   // network accepts blobs as input
