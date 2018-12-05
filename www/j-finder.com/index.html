@@ -1,336 +1,350 @@
 <html>
+
 <head>
-<meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>jFinder - use machine learning to find out how Jewish you look!</title>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js">
-</script>
-
-<script src="Build/UnityLoader.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
-<link rel="stylesheet" href="style.css">
-
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="Build/UnityLoader.js"></script>
+	<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>-->
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div id="head">
-jFinder<br>use A.I to find out how Jewish you look!
-<!--<br><span class="astrix">*</span><span id="title-dev">in development</span>-->
-</div>
-<div id="loading-screen">
-<img id="loading-logo" src="images/loading.gif">
-</div>
-<div id="content">
-	
-<button id="webgl" class="hide-input" onclick="runWebgl()"> </button>
-<label for="webgl">Try live</label>
-<div id="webgl-container">
-	<div id="loading-webgl">
-		<img src="images/loading.gif" id="webgl-loader">Loading, <br>
-		Make sure you have your webcam connected and to allow the site to use it.<br>
-		(takes about 30 seconds)
+	<div id="head">
+		jFinder<br>use A.I to find out how Jewish you look!
+		<!--<br><span class="astrix">*</span><span id="title-dev">in development</span>-->
 	</div>
-	
-	<button id="stop-button" onclick="location.reload()">stop</button>
-	<div id="h3-container">
-	<h1>See how Jewish you look:</h1>
+	<div id="loading-screen">
+		<img id="loading-logo" src="images/loading.gif">
 	</div>
-	<div id="gameContainer" style="width: 640px; height: 480px; "></div>
+	<div id="content">
 
-</div>
-<div id="mobile-notice">
-("Photo Booth" version is available on desktop)</div>
-<br>
-<hr>
-<div id="upload">
-<h3>Use your camera or choose an image:</h3>
+		<button id="webgl" class="hide-input" onclick="runWebgl()"> </button>
+		<label for="webgl">Try live</label>
+		<div id="webgl-container">
+			<div id="loading-webgl">
+				<img src="images/loading.gif" id="webgl-loader">Loading, <br> Make sure you have your webcam connected and to allow the site to use it.<br> (takes about 30 seconds)
+			</div>
 
-<div class="upload-container">
-						<div id="file-upload" class="disabledElement">
-						<form id="frmUploader" enctype="multipart/form-data" action="http://localhost:3003/upload" method="post">
-							
-							<input type="file" name="file" id="file" class="hide-input hide-data"/>
-							<label for="file">Choose image</label>
-							<br><br>
-							<button type="submit" name="submit" id="btnSubmit" value="upload" >Get prediction</button>
-						</form>
-						</div>
-</div>
-<div id="result-container">
-<img src="" id="result"></div>
-</div>
-<hr>
-<div class="process">
-<img src="images/img_29_10_2018_21_14_664_printul-harry-si-meghan-markle.jpg"><br>
-<div id="blurb">
-jFinder, is an artifitial neural net that predicts whether someone is jewish based on their fatial features.</div>
-<span>With 91.08% accuracy<br><br>(tested on 1500 samples, trained on over 5000 images).</span><br><br>
-<hr>
+			<button id="stop-button" onclick="location.reload()">stop</button>
+			<div id="h3-container">
+				<h1>See how Jewish you look:</h1>
+			</div>
+			<div id="gameContainer" style="width: 640px; height: 480px; "></div>
 
-<h1 class="section-margin title">The process</h1>
+		</div>
+		<div id="mobile-notice">
+			("Photo Booth" version is available on desktop)</div>
+		<br>
+		<hr>
+		<div id="upload">
+			<h3>Use your camera or choose an image:</h3>
 
-<h2 class="mini-title">Aggrigating faces to compose a jewish/non-Jewish database.</h2>
+			<div class="upload-container">
+				<div id="file-upload" class="disabledElement">
+					<form id="frmUploader" enctype="multipart/form-data" action="http://localhost:3003/upload" method="post">
 
-<h2>Samples from the Jewish sources:</h2>
+						<input type="file" name="file" id="file" class="hide-input hide-data" />
+						<label for="file">Choose image</label>
+						<br><br>
+						<button type="submit" name="submit" id="btnSubmit" value="upload">Get prediction</button>
+					</form>
+				</div>
+			</div>
+			<div id="result-container">
+				<img src="" id="result"></div>
+		</div>
+		<hr>
+		<div class="process">
+			<img src="images/img_29_10_2018_21_14_664_printul-harry-si-meghan-markle.jpg"><br>
+			<div id="blurb">
+				jFinder, is an artifitial neural net that predicts whether someone is jewish based on their fatial features.</div>
+			<span>With 91.08% accuracy<br><br>(tested on 1500 samples, trained on over 5000 images).</span><br><br>
+			<hr>
 
-<img src="images/9-46.jpg"><br>
-<div class="center italic">circa 1990, Jewish immigrants from the Soviet Union</div>
-<img src="images/D9FF.jpg"><br>
-<div class="center italic">Jewish refugees, Europe (probably Italy), January 1944</div>
-<img src="images/-PM.jpeg"><br>
-<div class="center italic">Israeli president Reuven Rivlin with ultra-Othodox IDF soldiers</div>
+			<h1 class="section-margin title">The process</h1>
 
-<img src="images/908+.JPG"><br>
+			<h2 class="mini-title">Aggrigating faces to compose a jewish/non-Jewish database.</h2>
 
-<img src="images/003.jpeg"><br>
+			<h2>Samples from the Jewish sources:</h2>
 
-<img src="images/1989.jpg"><br>
+			<img src="images/9-46.jpg"><br>
+			<div class="center italic">circa 1990, Jewish immigrants from the Soviet Union</div>
+			<img src="images/D9FF.jpg"><br>
+			<div class="center italic">Jewish refugees, Europe (probably Italy), January 1944</div>
+			<img src="images/-PM.jpeg"><br>
+			<div class="center italic">Israeli president Reuven Rivlin with ultra-Othodox IDF soldiers</div>
 
-<img src="images/2834.JPG"><br>
+			<img src="images/908+.JPG"><br>
 
-<img src="images/52_n.jpg"><br>
+			<img src="images/003.jpeg"><br>
 
-<img src="images/8598.JPG"><br>
+			<img src="images/1989.jpg"><br>
 
-<img src="images/a-40.jpg"><br>
+			<img src="images/2834.JPG"><br>
 
-<img src="images/e213.jpg"><br>
+			<img src="images/52_n.jpg"><br>
 
-<img src="images/FA00.jpg"><br>
+			<img src="images/8598.JPG"><br>
 
-<h3 class="section-margin">Samples of Non-Jewish sources</h3>
+			<img src="images/a-40.jpg"><br>
 
-<img src="images/non-jewish/1920.jpg"><br>
+			<img src="images/e213.jpg"><br>
 
-<img src="images/non-jewish/2007.jpg"><br>
+			<img src="images/FA00.jpg"><br>
 
-<img src="images/non-jewish/2014.jpg"><br>
+			<h3 class="section-margin">Samples of Non-Jewish sources</h3>
 
-<img src="images/non-jewish/2018.jpg"><br>
+			<img src="images/non-jewish/1920.jpg"><br>
 
-<img src="images/non-jewish/2998.jpg"><br>
+			<img src="images/non-jewish/2007.jpg"><br>
 
-<img src="images/non-jewish/6-AM.png"><br>
+			<img src="images/non-jewish/2014.jpg"><br>
 
-<img src="images/non-jewish/9716.jpg"><br>
+			<img src="images/non-jewish/2018.jpg"><br>
 
-<img src="images/non-jewish/_n-1.jpg"><br>
+			<img src="images/non-jewish/2998.jpg"><br>
 
-<img src="images/non-jewish/a9bb.jpg"><br>
+			<img src="images/non-jewish/6-AM.png"><br>
 
-<img src="images/non-jewish/ader.jpg"><br>
+			<img src="images/non-jewish/9716.jpg"><br>
 
-<img src="images/non-jewish/ault.jpg"><br>
+			<img src="images/non-jewish/_n-1.jpg"><br>
 
-<img src="images/non-jewish/Bali.jpg"><br>
+			<img src="images/non-jewish/a9bb.jpg"><br>
 
-<img src="images/non-jewish/cial.jpg"><br>
+			<img src="images/non-jewish/ader.jpg"><br>
 
-<img src="images/non-jewish/es-1.jpg"><br>
+			<img src="images/non-jewish/ault.jpg"><br>
 
-<img src="images/non-jewish/f0c6.jpg"><br>
+			<img src="images/non-jewish/Bali.jpg"><br>
 
-<img src="images/non-jewish/f0c6.jpg"><br>
+			<img src="images/non-jewish/cial.jpg"><br>
 
-<img src="images/non-jewish/ican.jpg"><br>
+			<img src="images/non-jewish/es-1.jpg"><br>
 
-<img src="images/non-jewish/move.jpg"><br>
+			<img src="images/non-jewish/f0c6.jpg"><br>
 
-<img src="images/non-jewish/rk.0.jpg"><br>
+			<img src="images/non-jewish/f0c6.jpg"><br>
 
-<img src="images/non-jewish/sity.jpg"><br>
+			<img src="images/non-jewish/ican.jpg"><br>
 
-<img src="images/non-jewish/slim.jpg"><br>
+			<img src="images/non-jewish/move.jpg"><br>
 
-<img src="images/non-jewish/uism.jpg"><br>
+			<img src="images/non-jewish/rk.0.jpg"><br>
 
-<img src="images/non-jewish/ukou.jpg"><br>
+			<img src="images/non-jewish/sity.jpg"><br>
 
-<img src="images/non-jewish/x800.jpg"><br>
+			<img src="images/non-jewish/slim.jpg"><br>
 
-<img src="images/non-jewish/za01.JPG"><br>
+			<img src="images/non-jewish/uism.jpg"><br>
 
-<img src="images/non-jewish/zers.jpg"><br>
+			<img src="images/non-jewish/ukou.jpg"><br>
 
-<h2 class="section-margin">Into a faces data base</h2>
-<h3>Jewish batch sample</h3><br>
-<img src="images/jewish-batch.png"><br>
-<h3>Non-Jewish batch sample</h3><br>
-<img src="images/gentile-batch.png"><br>
+			<img src="images/non-jewish/x800.jpg"><br>
 
-<h2>Training the model</h2>
-<div>
-A Deep Neural Net was designed specifically for this purpose, according to the data and learning result. The model is based roughly on two award winning models, the VGG16, GoogLeNet, and ResNet.<br><br>
-The database is composed of roughly 5000 training images and 1500 testing images. After the last session of training (72 hours) this model can classify people according to whether they are Jewish or not in 91.08% accuracy (tested by 1000 images that the model did not see before).<br><br>
+			<img src="images/non-jewish/za01.JPG"><br>
 
-Below are some visual samples of the data in between the layers. In the process each images is entered as input, each layer manipulates the data in the images and reshapes it, from 224 pixels at the start, to only two pixels, Jewish and non-Jewish, in which their values represent the confidence level of the prediction.
-</div>
-<div id="layers">
-<h2>Model Layers - Deep Neural Net</h2>
-<h4>samples from a few of the layers</h4>
+			<img src="images/non-jewish/zers.jpg"><br>
 
-<h3>Input image</h3>
-224 pixels X 224 pixels<br>
-<img style="width:224px;" src="images/intermidiate-layers/layer1.jpg"><br>
-<img class="arrow-down" src="images/arrow-down.jpg">
+			<h2 class="section-margin">Into a faces data base</h2>
+			<h3>Jewish batch sample</h3><br>
+			<img src="images/jewish-batch.png"><br>
+			<h3>Non-Jewish batch sample</h3><br>
+			<img src="images/gentile-batch.png"><br>
 
-<h3>Convolutional layer </h3>
-Extracting and enhancing values in the image, the images is reshaped according to 32 filters<br>
-<img style="width:100%;" src="images/intermidiate-layers/layer2.jpg"><br>
-<img class="arrow-down" src="images/arrow-down.jpg">
+			<h2>Training the model</h2>
+			<div>
+				A Deep Neural Net was designed specifically for this purpose, according to the data and learning result. The model is based roughly on two award winning models, the VGG16, GoogLeNet, and ResNet.<br><br> The database is composed of roughly 5000 training images and 1500 testing images. After the last session of training (72 hours) this model can classify people according to whether they are Jewish or not in 91.08% accuracy (tested by 1000 images that the model did not see before).<br><br> Below are some visual samples of the data in between the layers. In the process each images is entered as input, each layer manipulates the data in the images and reshapes it, from 224 pixels at the start, to only two pixels, Jewish and non-Jewish, in which their values represent the confidence level of the prediction.
+			</div>
+			<div id="layers">
+				<h2>Model Layers - Deep Neural Net</h2>
+				<h4>samples from a few of the layers</h4>
 
+				<h3>Input image</h3>
+				224 pixels X 224 pixels<br>
+				<img style="width:224px;" src="images/intermidiate-layers/layer1.jpg"><br>
+				<img class="arrow-down" src="images/arrow-down.jpg">
 
-<h3>Max pooling layer </h3>
-contracting the image and using the highst values of areas<br>
-<img style="width:75%;" src="images/intermidiate-layers/layer3.jpg"><br>
-<img class="arrow-down" src="images/arrow-down.jpg">
+				<h3>Convolutional layer </h3>
+				Extracting and enhancing values in the image, the images is reshaped according to 32 filters<br>
+				<img style="width:100%;" src="images/intermidiate-layers/layer2.jpg"><br>
+				<img class="arrow-down" src="images/arrow-down.jpg">
 
 
-<h3>Convolutional layer </h3>
-<img style="width:50%;" src="images/intermidiate-layers/layer5.jpg"><br>
-<img class="arrow-down" src="images/arrow-down.jpg">
+				<h3>Max pooling layer </h3>
+				contracting the image and using the highst values of areas<br>
+				<img style="width:75%;" src="images/intermidiate-layers/layer3.jpg"><br>
+				<img class="arrow-down" src="images/arrow-down.jpg">
 
-<h3>reshape layer </h3>
-A multidimentional pattern that we'll start to narrow down and flatten down.<br>
-<img style="width:500px;" src="images/intermidiate-layers/layer6.jpg"><br>
-<img class="arrow-down" src="images/arrow-down.jpg">
 
-<h3>Flatten </h3>
-One long line of pixels (values).
-<img style="width:100%;" src="images/intermidiate-layers/layer7.jpg"><br>
-<img class="arrow-down" src="images/arrow-down.jpg">
+				<h3>Convolutional layer </h3>
+				<img style="width:50%;" src="images/intermidiate-layers/layer5.jpg"><br>
+				<img class="arrow-down" src="images/arrow-down.jpg">
 
-<h3>Final output </h3>
-Two pixels, each represent a classification (Jewish and Now-Jewish) with values that represent the models confidence.<br>
-<img style=" margin-left:100px; width:30px;" src="images/intermidiate-layers/layer8.jpg"><br>
+				<h3>reshape layer </h3>
+				A multidimentional pattern that we'll start to narrow down and flatten down.<br>
+				<img style="width:500px;" src="images/intermidiate-layers/layer6.jpg"><br>
+				<img class="arrow-down" src="images/arrow-down.jpg">
 
-</div>
-</div>
+				<h3>Flatten </h3>
+				One long line of pixels (values).
+				<img style="width:100%;" src="images/intermidiate-layers/layer7.jpg"><br>
+				<img class="arrow-down" src="images/arrow-down.jpg">
 
-<hr>
-<div class="process">
-<h2 class="section-margin">Some obvious Predictions</h2>
-<!--<img src="images/prediction/me.png"><br>-->
-<img class='mobile-img' src="images/me-jewish.jpg"><br>
+				<h3>Final output </h3>
+				Two pixels, each represent a classification (Jewish and Now-Jewish) with values that represent the models confidence.<br>
+				<img style=" margin-left:100px; width:30px;" src="images/intermidiate-layers/layer8.jpg"><br>
 
-<img src="images/prediction/both.png"><br>
+			</div>
+		</div>
 
-<img src="images/prediction/nationalist.png"><br>
+		<hr>
+		<div class="process">
+			<h2 class="section-margin">Some obvious Predictions</h2>
+			<!--<img src="images/prediction/me.png"><br>-->
+			<img class='mobile-img' src="images/me-jewish.jpg"><br>
 
-<img src="images/prediction/hesus.png"><br>
+			<img src="images/prediction/both.png"><br>
 
-<img src="images/prediction/trump.png"><br>
+			<img src="images/prediction/nationalist.png"><br>
 
+			<img src="images/prediction/hesus.png"><br>
 
+			<img src="images/prediction/trump.png"><br>
 
-</div>
 
-<div id="footer">
-more info at <a href="https://ronerlih.com">ronelih.com</a>
-</div>
 
-<script>
-//$(function(){ 
-	//bind an event handler to the submit event for your login form
-//$('#btnSubmit').one('click', '#frmUploader', function (e) {
-//
-//    var $this = $(this);
-//	 e.stopPropagation();
-//    e.preventDefault();
-//
-//    $.post($this.attr('action'), $this.serialize(), function (responseData) {
-//		 
-//		 console.log("response:");
-//		 console.log(responseData);
-//        //in here you can analyze the output from your server-side script (responseData) and validate the user's login without leaving the page
-//    });
-//
-//
-//	  return false;
-//});
+		</div>
 
-//$.ajaxSetup({ cache: false });
-const fileSelect = document.getElementById('file');
-const loadingScreen = $('#loading-screen');
-
-$('#frmUploader').submit((e)=>{
-
-	 e.stopPropagation();
-    e.preventDefault();
-	 loadingScreen.fadeIn();
-	 var $form = $(this);
-	var file = fileSelect.files[0];
-	var formData = new FormData();
-	formData.append('img', file, file.name);
-//	 
-//    $.post('/upload', $this.serialize(), function (responseData) {
-//		 console.log("response:");
-//		 console.log(responseData);
-//	 });
-
-var xhr = new XMLHttpRequest();
-		xhr.open('POST', '/upload', true);
-		
-		xhr.onload = function () {
-		if (xhr.status === 200) {
-			 // File(s) uploaded.
-//			 uploadButton.innerHTML = 'Upload';
+		<div id="footer">
+			more info at <a href="https://ronerlih.com">ronelih.com</a>
+		</div>
+	</div>
+	<script>
+		$(function() {
 			
-		  } else {
-			 alert('An error occurred!');
-			 console.log("err " + JSON.stringify(err,null,2));
-		  }
-		};
+			let usingChrome = isChrome();
+			console.log("usingChrome: " + usingChrome);
+
+			const fileSelect = document.getElementById('file');
+			const loadingScreen = $('#loading-screen');
+
+			$('#frmUploader').submit((e) => {
+
+				e.stopPropagation();
+				e.preventDefault();
+				loadingScreen.fadeIn();
+				var $form = $(this);
+				var file = fileSelect.files[0];
+				var formData = new FormData();
+				formData.append('img', file, file.name);
+				//	 
+				//    $.post('/upload', $this.serialize(), function (responseData) {
+				//		 console.log("response:");
+				//		 console.log(responseData);
+				//	 });
+
+				var xhr = new XMLHttpRequest();
+				xhr.open('POST', '/upload', true);
+
+				xhr.onload = function() {
+					if (xhr.status === 200) {
+						// File(s) uploaded.
+						//			 uploadButton.innerHTML = 'Upload';
+
+					} else {
+						alert('An error occurred!');
+						console.log("err " + JSON.stringify(err, null, 2));
+					}
+				};
+
+				xhr.send(formData);
+
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState === 4) {
+						console.log("image name " + xhr.response);
+						showResult(xhr.response);
+						loadingScreen.fadeOut();
+					}
+				}
+				//	$.ajax({
+				//	 	url : 'https://j-finder.com/upload', 
+				//		  cache : false,
+				//		  method: 'post',
+				//        dataType : 'file',
+				//		  cache : false,
+				//		  headers: { "cache-control": "no-cache" },
+				//        success : function (response) {
+				//            console.log("image name " + response);
+				//				showResult(response);
+				//        },
+				//		  error: (err)=>{console.log("err " + JSON.stringify(err,null,2));}
+				//    });
+				return false;
+			});
+
+			$('.hide-data').one('click', (e) => {
+				e.target.style.width = 580
+			});
+
+		});
+
+		function showResult(imgName) {
+			res = document.getElementById("result");
+			res.src = 'https://j-finder.com/uploads/' + imgName;
+			res.style.width = 900;
+			res.style.maxWidth = '95vw';
+			res.style.border = '4px solid black';
+			res.style.marginBottom = 80;
+		}
+
+		function runWebgl() {
+			var gameInstance = UnityLoader.instantiate("gameContainer", "Build/jFinder.json");
+			$('#webgl-container').show();
+			$('#webgl').hide();
+
+		}
+
+		function doneLoadingWebgl() {
+			console.log('\n\nwebgl load done');
+			$('#loading-webgl').hide();
+		}
 		
-		xhr.send(formData);
-		
-		xhr.onreadystatechange = function() {
-		 if (xhr.readyState === 4) {
-			console.log("image name " + xhr.response);
-			showResult(xhr.response);
-			loadingScreen.fadeOut();
-		 }
-	  }
-//	$.ajax({
-//	 	url : 'https://j-finder.com/upload', 
-//		  cache : false,
-//		  method: 'post',
-//        dataType : 'file',
-//		  cache : false,
-//		  headers: { "cache-control": "no-cache" },
-//        success : function (response) {
-//            console.log("image name " + response);
-//				showResult(response);
-//        },
-//		  error: (err)=>{console.log("err " + JSON.stringify(err,null,2));}
-//    });
-	 return false;
-});
+		function isChrome(){
+			// please note, 
+			// that IE11 now returns undefined again for window.chrome
+			// and new Opera 30 outputs true for window.chrome
+			// but needs to check if window.opr is not undefined
+			// and new IE Edge outputs to true now for window.chrome
+			// and if not iOS Chrome check
+			// so use the below updated condition
+			var isChromium = window.chrome;
+			var winNav = window.navigator;
+			var vendorName = winNav.vendor;
+			var isOpera = typeof window.opr !== "undefined";
+			var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+			var isIOSChrome = winNav.userAgent.match("CriOS");
 
-$('.hide-data').one('click', (e)=>{e.target.style.width = 580});	  
+			if (isIOSChrome) {
+				// is Google Chrome on IOS
+			} else if(
+			  isChromium !== null &&
+			  typeof isChromium !== "undefined" &&
+			  vendorName === "Google Inc." &&
+			  isOpera === false &&
+			  isIEedge === false
+			) {
+				// is Google Chrome
+				return true;
+			} else { 
+				// not Google Chrome 
+				return false;
+			}
 
-//});
-
-function showResult(imgName){
-	res = document.getElementById("result");
-	res.src = 'https://j-finder.com/uploads/' + imgName;
-	res.style.width= 900;
-	res.style.maxWidth = '95vw';
-	res.style.border='4px solid black';
-	res.style.marginBottom = 80;
-}
-
-function runWebgl(){
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/jFinder.json");
-		$('#webgl-container').show();
-		$('#webgl').hide();
-		
-}
-function doneLoadingWebgl(){
-	console.log('\n\nwebgl load done');
-	$('#loading-webgl').hide();
-}
-</script>
+		}
+	</script>
 </body>
+
 </html>
