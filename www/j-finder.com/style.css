@@ -230,7 +230,9 @@ padding:5px 0 5px 0;
 background: linear-gradient(135deg, rgb(128, 147, 214) 0%,rgb(0, 199, 241) 100%);
 ;}
 */
-
+label, #btnSubmit{
+border-radius: 200px;
+}
 #content{padding-top: 44px;}
 .process{
 margin-left: auto;
@@ -275,8 +277,11 @@ margin-top:100px;
 }
 #layers img {border: none;}
 .arrow-down{width:30px!important; margin-left: 100px!important;}
-
+:focus {
+    outline: 0 !important;
+}
 @media only screen and (max-device-width : 640px) {
+
 #webgl-container{display:none;}
 #mobile-notice{display: block;}
 #webgl{display: none;}
@@ -291,7 +296,7 @@ label, #btnSubmit {
     text-align: center;
     font-size: 2em;
 	 margin-left: 26px;
-	     border-radius: 200px;
+	     
 }
 #btnSubmit {
 	 margin-left: 26px;
