@@ -283,8 +283,8 @@ width:20px;vertical-align: bottom;
 .section-margin{
 margin-top:100px;
 }
-#layers img {border: none;}
-.arrow-down{width:30px!important; margin-left: 100px!important;}
+#layers img, #layers, .arrow-down {border: none; display: block;margin-left: auto;margin-right: auto; text-align: center;}
+.arrow-down{width:30px!important; }
 :focus {
     outline: 0 !important;
 }
