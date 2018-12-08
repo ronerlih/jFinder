@@ -83,7 +83,7 @@ const inceptionModelPath = './dnn/inception5h';
 
 //const modelFile = path.resolve(inceptionModelPath, 'tensorflow_inception_graph.pb');
 //const classNamesFile = path.resolve(inceptionModelPath, 'imagenet_comp_graph_label_strings.txt');
-const modelFile = path.resolve(inceptionModelPath, 'graph.pb');
+const modelFile = path.resolve(inceptionModelPath, 'graph_v2.pb');
 const classNamesFile = path.resolve(inceptionModelPath, 'test_classes.txt');
 if (!fs.existsSync(modelFile) || !fs.existsSync(classNamesFile)) {
   console.log('could not find inception model');
