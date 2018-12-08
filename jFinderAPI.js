@@ -168,7 +168,7 @@ const classifyImg = (img) => {
 const classifier = new cv.CascadeClassifier(cv.HAAR_FRONTALFACE_ALT2);
 let whiteMat = new cv.Mat(100, 100,cv.CV_8UC3, [50, 50, 50])
 const webcamPort = 0;
-let noFaces == true;
+let noFaces = true;
 
 function detectFaces(img) {
   // restrict minSize and scaleFactor for faster processing
