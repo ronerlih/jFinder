@@ -293,6 +293,13 @@ margin-top:100px;
 }
 
 * { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+#webgl + label {
+width: 306px;
+height:40;
+padding-top: 10px;
+font-size: 23px;
+	 
+}
 @media only screen and (max-device-width : 640px) {
 
 #webgl-container{display:none;}
