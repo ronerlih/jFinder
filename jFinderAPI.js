@@ -280,7 +280,7 @@ app.post('/upload',  function (req, res, callback) {
 									'Access-Control-Allow-Origin': '*',
 									'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
 									'Access-Control-Allow-Headers': 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type'});
-		res.write('[' + lastImageName + ',' + noFaces + ']');
+		res.write(  lastImageName + ',' + noFaces.toString() );
 		res.end();
 
 		}
