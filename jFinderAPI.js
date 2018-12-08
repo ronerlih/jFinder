@@ -67,8 +67,6 @@ var Storage = multer.diskStorage({
 const upload = multer({ storage: Storage ,fileFilter: imageFilter}).single('img');
 
 
-
-
 ////
 //DNN
 ////
@@ -170,6 +168,7 @@ const classifyImg = (img) => {
 const classifier = new cv.CascadeClassifier(cv.HAAR_FRONTALFACE_ALT2);
 let whiteMat = new cv.Mat(100, 100,cv.CV_8UC3, [50, 50, 50])
 const webcamPort = 0;
+let noFaces == true;
 
 function detectFaces(img) {
   // restrict minSize and scaleFactor for faster processing
@@ -272,7 +271,7 @@ app.post('/upload',  function (req, res, callback) {
 		faces = detectFaces(mat);
 		
 		//check if no faces
-		(faces.length  == 0 ) ? console.log("\n\n\n\n\n\n\n\n\nno faces\n\n\n\n\n\n\n\n\n") : console.log(faces.length + " faces found"); 
+		(faces.length  == 0 ) ? noFaces = true : noFaces = false; 
 		
 		faceRects(faces, mat);
 		cv.imwrite('./www/j-finder.com/uploads/' + lastImageName, mat);
@@ -281,7 +280,7 @@ app.post('/upload',  function (req, res, callback) {
 									'Access-Control-Allow-Origin': '*',
 									'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
 									'Access-Control-Allow-Headers': 'DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type'});
-		res.write(lastImageName);
+		res.write([lastImageName, noFaces]);
 		res.end();
 
 		}

@@ -53,6 +53,7 @@
 				</div>
 			</div>
 			<div id="result-container">
+				<div id="noFacesNotice"></div>
 				<img src="" id="result"></div>
 		</div>
 		<hr>
@@ -262,7 +263,7 @@
 
 			const fileSelect = document.getElementById('file');
 			const loadingScreen = $('#loading-screen');
-			
+			const noFacesNotice = document.getElementById('noFacesNotice');
 			//disable input
 			$('#btnSubmit').prop("disabled", true);
 			
@@ -326,7 +327,15 @@
 
 		});
 
-		function showResult(imgName) {
+		function showResult(result) {
+			imgName = result[0];
+			noFaces = result[1];
+			
+			if(noFaces == true){
+			noFacesNotice.innerHTML = 'No faces found in the image,<br>Please try again with a clearer image.';
+			}else{
+			noFacesNotice.innerHTML = '';
+			}
 			res = document.getElementById("result");
 			res.src = 'https://j-finder.com/uploads/' + imgName;
 			res.style.width = 900;
