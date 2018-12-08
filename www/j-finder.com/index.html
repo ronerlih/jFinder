@@ -344,7 +344,10 @@
 			console.log('\n\nwebgl load done');
 			$('#loading-webgl').hide();
 		}
-
+		
+		function noCamera(){
+		$('#loading-webgl').html('No Camera found, or not allowed,<br>Please make sure you have your camera connected.')
+		}
 		function noChromeStyle(mobile) {
 			//desktop browsers - not chrome
 			console.log("no chrome style called");
