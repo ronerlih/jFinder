@@ -343,10 +343,13 @@
 		function doneLoadingWebgl() {
 			console.log('\n\nwebgl load done');
 			$('#loading-webgl').hide();
+			
 		}
 		
 		function noCamera(){
-		$('#loading-webgl').html('No Camera found, or not allowed,<br>Please make sure you have your camera connected.')
+		$('#loading-webgl').html('No Camera found, or not allowed,<br>Please make sure you have your camera connected and try to reload the page.');
+		$('#gameContainer').hide();
+		$('#h3-container').hide();
 		}
 		function noChromeStyle(mobile) {
 			//desktop browsers - not chrome
