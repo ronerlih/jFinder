@@ -218,6 +218,7 @@ if(faces.length){
 	////
 	
 		input = _face.resize(150,150);
+		input = input.bgrToGray();
 //cv.imshow('jewishFinder', clone);;
 		
 		const predictions = classifyImg(clone);
