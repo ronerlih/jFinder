@@ -328,9 +328,9 @@
 		});
 
 		function showResult(result) {
-			resultArray =  JSON.parse('[' + result + ']');
-			imgName = result[0];
-			noFaces = result[1];
+			resultArray =  result.split(',');
+			imgName = resultArray[0];
+			noFaces = resultArray[1];
 			
 			if(noFaces == true){
 			noFacesNotice.innerHTML = 'No faces found in the image,<br>Please try again with a clearer image.';
