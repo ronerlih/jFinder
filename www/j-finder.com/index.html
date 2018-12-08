@@ -45,8 +45,8 @@
 				<div id="file-upload" class="disabledElement">
 					<form id="frmUploader" enctype="multipart/form-data" action="http://localhost:3003/upload" method="post">
 
-						<input type="file" name="file" id="file" class="hide-input hide-data" />
-						<label for="file">Choose image</label>
+						<input type="file" name="file" onchange="fileInputChange()" id="file" class="hide-input hide-data" />
+						<label for="file">Select</label>
 						<br><br>
 						<button type="submit" name="submit" id="btnSubmit" value="upload">Get prediction</button>
 					</form>
@@ -256,14 +256,16 @@
 	</div>
 	<script>
 		$(function() {
-
 			let usingChrome = isChrome();
 			let isMobile = mobileCheck();
 			usingChrome ? console.log("usingChrome: " + usingChrome) : noChromeStyle(isMobile);
 
 			const fileSelect = document.getElementById('file');
 			const loadingScreen = $('#loading-screen');
-
+			
+			//disable input
+			$('#btnSubmit').prop("disabled", true);
+			
 			$('#frmUploader').submit((e) => {
 
 				e.stopPropagation();
@@ -379,6 +381,17 @@
 			}
 
 		}
+		function fileInputChange(){
+		let value = document.getElementById('file').value;
+			console.log(value); 
+			if( value != ''){
+				$('#btnSubmit').prop("disabled", false);
+				$('#btnSubmit').css('opacity','1');
+			}else{
+			$('#btnSubmit').prop("disabled", true);
+				$('#btnSubmit').css('opacity','0.7');
+			}
+			}
 
 		function mobileCheck() {
 			var check = false;

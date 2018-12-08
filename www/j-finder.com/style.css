@@ -187,14 +187,16 @@ background-color: #4a87f4;
     position: absolute;
     z-index: -1;
     text-indent: 2426px;
-    padding-left: 50px;
-    font-size: 14px;
-	 outline: none;
+	 font-size: 22px;
+    margin-left: 249px;
+    padding-top: 18px;
+    outline: none;
+    padding-left: 5px;
 }
 .hide-data{
 width:50px;
 width: 1px;
-opacity:0;
+opacity:1;
 }
 
 label {
@@ -293,12 +295,18 @@ margin-top:100px;
 }
 
 * { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
-#webgl + label {
+#webgl + label, label, #btnSubmit {
 width: 306px;
-height:40;
-padding-top: 10px;
+height:40px;
+padding-top: 10px!important;
 font-size: 23px;
 	 
+}
+#btnSubmit{
+padding-top: 0px!important;
+
+height:50px;
+opacity:0.7;
 }
 @media only screen and (max-device-width : 640px) {
 
@@ -329,13 +337,12 @@ label[for="webgl"]
     display:none;
 }
 .hide-input{
-    text-indent: 2440px;
-    font-size: 30px;
-    margin-left: 100px;
-	 padding-top:10px;
-	 outline: none;
+text-indent: 2440px;
+    font-size: 40px;
+    padding-top: 93px;
+    outline: none;
     padding-left: 5px;
-	 
+    margin-left: 27px;
 }
 #upload {
 /*    padding-left: 32px;*/
@@ -360,6 +367,23 @@ font-weight: 700;
 #blurb, .title{
 font-size: 50px;
 font-weight: 600;
+}
+ label, #btnSubmit {
+width: calc(100vw - 400px);
+height:44px;
+padding-top: 18px!important;
+font-size: 40px;
+text-align: center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+height:70px;
+	 
+}
+#btnSubmit {
+height:88px;
+padding-top: 0px!important;
+margin-top:30px;
 }
 }
 
