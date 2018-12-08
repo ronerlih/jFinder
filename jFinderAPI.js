@@ -270,6 +270,10 @@ app.post('/upload',  function (req, res, callback) {
 //		cv.imshow('jewishFinder', mat);
 		
 		faces = detectFaces(mat);
+		
+		//check if no faces
+		(faces.length  == 0 ) ? console.log("\n\n\n\n\n\n\n\n\nno faces\n\n\n\n\n\n\n\n\n") : console.log(faces.length + " faces found"); 
+		
 		faceRects(faces, mat);
 		cv.imwrite('./www/j-finder.com/uploads/' + lastImageName, mat);
 //		res.send(lastImageName);
@@ -313,8 +317,4 @@ app.listen(port, () => console.log('running on port 3003'));
   
    console.log('________________________________________________________');
   
-
-
-//run face detectioun
-//tasks.runVideoFaceDetection(webcamPort, detectFaces, faceRects);
 
