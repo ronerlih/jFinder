@@ -347,9 +347,10 @@
 		}
 		
 		function noCamera(){
-		$('#loading-webgl').html('No Camera found, or not allowed,<br>Please make sure you have your camera connected and try to refresh the page.');
+		$('#loading-webgl').html('No Camera found, or not allowed,<br>Please make sure you have your camera connected and hit refresh.');
 		$('#gameContainer').hide();
 		$('#h3-container').hide();
+		$('#stop-button').html('Refresh')
 		}
 		function noChromeStyle(mobile) {
 			//desktop browsers - not chrome
