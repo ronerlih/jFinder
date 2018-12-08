@@ -106,8 +106,8 @@ const classifyImg = (img) => {
 //  const imgResized = img.resizeToMax(maxImgDim).padToSquare(white);
   
   //smaller img input model
-  const imgResized = img.resize(150,150);
-  const imgResized = imgResized.bgrToGray();
+  let imgResized = img.resize(150,150);
+  imgResized = imgResized.bgrToGray();
   //large img input model
 //  const imgResized = img.resize(224,224);
 //  .padToSquare(white);
