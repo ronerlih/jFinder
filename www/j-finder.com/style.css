@@ -365,6 +365,29 @@ display: block;
 }
 
 .title{text-align: center;}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+/*
+background-color: #f4f3f3;
+    box-shadow: 0px 0px 20px 0px #6260609e;
+    border: 1px solid gray;
+*/
+}
+  .card {
+ display: inline-block!important;
+}
+.card img{width:auto!important;height:600px!important;}
+.scrolling-wrapper:-webkit-scrollbar {
+    display: none;
+}
+.scrolling-wrapper {
+  -webkit-overflow-scrolling: touch;
+  
+}
+
 @media only screen and (max-device-width : 640px) {
 
 #webgl-container{display:none;}

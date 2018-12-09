@@ -11,7 +11,7 @@
 	<meta property="og:url" content="https://j-finder.com/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:updated_time" content="1544318057701" />
-	
+
 	<title>jFinder - use machine learning to find out how Jewish you look!</title>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="Build/UnityLoader.js"></script>
@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="main-process-element"  onscroll="processScrolled()" >
 	<div id="head">
 		<div class="product-name">jFinder</div><br>Use A.I to find out how Jewish you look!
 		<!--<br><span class="astrix">*</span><span id="title-dev">in development</span>-->
@@ -45,7 +45,7 @@
 		</div>
 		<div id="mobile-notice">
 			("Photo Booth" version is available on desktop)</div>
-<!--		<hr>-->
+		<!--		<hr>-->
 		<div id="upload">
 			<h3>Use your camera or choose an image:</h3>
 
@@ -64,9 +64,9 @@
 				<div id="noFacesNotice"></div>
 				<img src="" id="result"></div>
 		</div>
-<!--		<hr class="hide-on-mobile">-->
-		<hr >
-		<div class="process">
+		<!--		<hr class="hide-on-mobile">-->
+		<hr>
+		<div class="process" >
 			<img src="images/img_29_10_2018_21_14_664_printul-harry-si-meghan-markle.jpg"><br>
 			<div id="blurb">
 				jFinder, is an artifitial neural net that predicts whether someone is jewish based on their facial features.</div>
@@ -78,116 +78,206 @@
 			<h1 class="section-margin title">The Process</h1>
 
 			<h2 class="mini-title">Aggregating faces to compose a jewish/non-Jewish database.
-</h2>
+			</h2>
 
-			<h2>Samples from the Jewish sources:</h2>
+			<h2 >Samples from the Jewish sources:</h2>
+			<div id="jewish-container" class="scrolling-wrapper" >
+				<div class="card"><img src="images/9-46.jpg"><br>
+					<div class="center italic">circa 1990, Jewish immigrants from the Soviet Union</div>
+				</div>
 
-			<img src="images/9-46.jpg"><br>
-			<div class="center italic">circa 1990, Jewish immigrants from the Soviet Union</div>
-			<img src="images/D9FF.jpg"><br>
+				<div class="card">
+				<img src="images/D9FF.jpg"><br>
 			<div class="center italic">Jewish refugees, Europe (probably Italy), January 1944</div>
-			<img src="images/-PM.jpeg"><br>
+				</div>
+				<div class="card">
+					<img src="images/-PM.jpeg"><br>
 			<div class="center italic">Israeli president Reuven Rivlin with ultra-Orthodox IDF soldiers</div>
 
-			<img src="images/908+.JPG"><br>
+				</div>
+				<div class="card">
+<img src="images/908+.JPG"><br>
 			<div class="center italic">Alliance School in Baghdad, 1908 (courtesy Ezra Hakkak) </div>
-			<img src="images/tzva_.jpg"><br>
+							</div>
+				<div class="card">
+					<img src="images/tzva_.jpg"><br>
 			<div class="center italic">Egyptian Jews in Alexandria when the community was more numerous. Photograph: Nebi Daniel Association</div>
-			<img src="images/003.jpeg"><br>
+				</div>
+				<div class="card">
+					<img src="images/003.jpeg"><br>
 			<div class="center italic"></div>
-			<img src="images/1989.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/1989.jpg"><br>
 			<div class="center italic">
-			Kiryat-Sharet high school, Holon. 1989 yearbook. 
+				Kiryat-Sharet high school, Holon. 1989 yearbook.
 			</div>
-			<img src="images/2834.JPG"><br>
+				</div>
+				<div class="card">
+					<img src="images/2834.JPG"><br>
 			<div class="center italic">
-			"Yesh Atid" political party's PR delegation to Germany, 26th June 2017. (photo: Aliza Lavy).
+				"Yesh Atid" political party's PR delegation to Germany, 26th June 2017. (photo: Aliza Lavy).
 			</div>
-			<img src="images/52_n.jpg"><br>
+				</div>
+				
+				<div class="card">
+					<img src="images/8598.JPG"><br>
 			<div class="center italic">
-			"HaNoar HaOved" youth camp. Acre.</div>
-			<img src="images/8598.JPG"><br>
+				Ultra Orthodox IDF soldiers.</div>
+				</div>
+				<div class="card">
+					<img src="images/a-40.jpg"><br>
 			<div class="center italic">
-			Ultra Orthodox IDF soldiers.</div>
-			<img src="images/a-40.jpg"><br>
+				"Tikun Olam", "Bina" Volunteering activities.</div>
+				</div>
+				<div class="card">
+					<img src="images/e213.jpg"><br>
 			<div class="center italic">
-			"Tikun Olam", "Bina" Volunteering activities.</div>
-			<img src="images/e213.jpg"><br>
+				Jewish Young Girls welcoming the israeli British Army soldiers, Libya. Circa 1942.</div>
+				</div>
+				<div class="card">
+					<img src="images/FA00.jpg"><br>
 			<div class="center italic">
-			Jewish Young Girls welcoming the israeli British Army soldiers, Libya. Circa 1942.</div>
-			<img src="images/FA00.jpg"><br>
-			<div class="center italic">
+				</div>
+				
 			</div>
-			<h3 class="section-margin">Samples of Non-Jewish sources</h3>
 
+			</div>
+			
+			
+			<h3 class="section-margin">Samples of Non-Jewish sources</h3>
+			
+			
+			<div  id="non-jewish-container" class="scrolling-wrapper">
+			
+				<div class="card">
+								
 			<img src="images/non-jewish/1920.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/2007.jpg"><br>
+				</div>
+				
+				<div class="card">
+					<img src="images/non-jewish/2007.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/2014.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/2014.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/2018.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/2018.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/2998.jpg"><br>
+				</div>
+				
+				<div class="card">
+					<img src="images/non-jewish/2998.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/6-AM.png"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/6-AM.png"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/9716.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/9716.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/_n-1.jpg"><br>
+				</div>
+				
+				<div class="card">
+					<img src="images/non-jewish/_n-1.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/a9bb.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/a9bb.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/ader.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/ader.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/ault.jpg"><br>
+				</div>
+				
+				<div class="card">
+					<img src="images/non-jewish/ault.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/Bali.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/Bali.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/cial.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/cial.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/es-1.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/es-1.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/f0c6.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/f0c6.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/ican.jpg"><br>
+				</div>
+				<div class="card">
+					
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/ican.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/move.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/move.jpg"><br>
 			<div class="center italic">
 			</div>
-			<img src="images/non-jewish/rk.0.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/rk.0.jpg"><br>
 			<div class="center italic"></div>
-			<img src="images/non-jewish/sity.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/sity.jpg"><br>
 			<div class="center italic"></div>
-			<img src="images/non-jewish/slim.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/slim.jpg"><br>
 			<div class="center italic"></div>
-			<img src="images/non-jewish/uism.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/uism.jpg"><br>
 			<div class="center italic"></div>
-			<img src="images/non-jewish/ukou.jpg"><br>
+				</div>
+				<div class="card">
+								<img src="images/non-jewish/ukou.jpg"><br>
 			<div class="center italic"></div>
-			<img src="images/non-jewish/x800.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/x800.jpg"><br>
 			<div class="center italic"></div>
-			<img src="images/non-jewish/za01.JPG"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/za01.JPG"><br>
 			<div class="center italic"></div>
-			<img src="images/non-jewish/zers.jpg"><br>
+				</div>
+				<div class="card">
+					<img src="images/non-jewish/zers.jpg"><br>
 			<div class="center italic"></div>
-			
+				</div>
+
+			</div>
+
 			<h2 class="section-margin">Into a faces data base</h2>
 			<h3>Jewish batch sample</h3><br>
 			<img src="images/jewish-batch.png"><br>
@@ -269,15 +359,16 @@
 			let usingChrome = isChrome();
 			let isMobile = mobileCheck();
 			usingChrome ? console.log("usingChrome: " + usingChrome) : noChromeStyle(isMobile);
-			
+
 			isMobile ? removeDesktoStyle() : console.log("desktop");
-			
+
 			const fileSelect = document.getElementById('file');
 			const loadingScreen = $('#loading-screen');
 			let noFacesNotice = document.getElementById('noFacesNotice');
+			
 			//disable input
 			$('#btnSubmit').prop("disabled", true);
-			
+
 			$('#frmUploader').submit((e) => {
 
 				e.stopPropagation();
@@ -335,27 +426,29 @@
 			$('.hide-data').one('click', (e) => {
 				e.target.style.width = 580
 			});
+		
 
+		
 		});
 
 		function showResult(result) {
-			resultArray =  result.split(',');
+			resultArray = result.split(',');
 			imgName = resultArray[0];
 			noFaces = resultArray[1];
-			
-			if(noFaces == 'true'){
-			noFacesNotice.innerHTML = 'No faces found in the image,<br>Please try again.';
-			}else{
-			noFacesNotice.innerHTML = '';
+
+			if (noFaces == 'true') {
+				noFacesNotice.innerHTML = 'No faces found in the image,<br>Please try again.';
+			} else {
+				noFacesNotice.innerHTML = '';
 			}
 			res = document.getElementById("result");
 			res.src = 'https://j-finder.com/uploads/' + imgName;
 			res.style.width = 'calc(100vw - 8px)';
-//			res.style.maxWidth = '95vw';
+			//			res.style.maxWidth = '95vw';
 			res.style.border = '4px solid black';
 			res.style.marginBottom = 80;
 		}
-
+		
 		function runWebgl() {
 			var gameInstance = UnityLoader.instantiate("gameContainer", "Build/jFinder.json");
 			$('#webgl-container').show();
@@ -366,15 +459,35 @@
 		function doneLoadingWebgl() {
 			console.log('\n\nwebgl load done');
 			$('#loading-webgl').hide();
+
+		}
+
+		function noCamera() {
+			$('#loading-webgl').html('No Camera found, or not allowed,<br>Please make sure you have your camera connected and hit refresh.');
+			$('#gameContainer').hide();
+			$('#h3-container').hide();
+			$('#stop-button').html('Refresh')
+		}
+		
+		function processScrolled(){
+			let processElem = document.getElementById('main-process-element');
+			let jewishSources = document.getElementById('jewish-container');
+			let nonJewishSources = document.getElementById('non-jewish-container');
+			scrollMain = processElem.scrollTop;
+			
+			console.log("scrollMain: " + scrollMain);
+			
+			if(scrollMain >= 670 || scrollMain <= 3000){
+			jewishSources.scrollLeft = scrollMain - 670;
+			}
+			
+			if(scrollMain >= 1520 || scrollMain <= 3880){
+			nonJewishSources.scrollLeft = scrollMain - 1520;
+			}
+			
 			
 		}
 		
-		function noCamera(){
-		$('#loading-webgl').html('No Camera found, or not allowed,<br>Please make sure you have your camera connected and hit refresh.');
-		$('#gameContainer').hide();
-		$('#h3-container').hide();
-		$('#stop-button').html('Refresh')
-		}
 		function noChromeStyle(mobile) {
 			//desktop browsers - not chrome
 			console.log("no chrome style called");
@@ -384,11 +497,16 @@
 				"font-size": "35px"
 			});
 			$('.product-name').css('fontSize', '40px');
-			$('#btnSubmit,#stop-button, label, #head, #blurb, h1').css({'font-family': 'iphone-ultralight','letter-spacing':'0.5'});
-			$('html').css({'font-family': 'iphone-thin'});
-//			$('label').css({'margin-left': '50px',
-//													'margin-top': '20px'});
-			
+			$('#btnSubmit,#stop-button, label, #head, #blurb, h1').css({
+				'font-family': 'iphone-ultralight',
+				'letter-spacing': '0.5'
+			});
+			$('html').css({
+				'font-family': 'iphone-thin'
+			});
+			//			$('label').css({'margin-left': '50px',
+			//													'margin-top': '20px'});
+
 			//mobile safari, firefox, ie, opera..
 			if (mobile) {
 				$('#mobile-notice, span').css('fontSize', '2em');
@@ -402,26 +520,30 @@
 				$('.mini-title, .italic').css('fontSize', '2.2em');
 				$('.text').css('fontSize', '1.8em');
 				$('.product-name').css('fontSize', '70px');
-				$('.hide-input').css({'padding-left': '110px',
-											 'margin-top': '30px'});
+				$('.hide-input').css({
+					'padding-left': '110px',
+					'margin-top': '30px'
+				});
 
 			}
 
 		}
-		function removeDesktoStyle(){
-		$('.hide-on-mobile').hide();
+
+		function removeDesktoStyle() {
+			$('.hide-on-mobile').hide();
 		}
-		function fileInputChange(){
-		let value = document.getElementById('file').value;
-			console.log(value); 
-			if( value != ''){
+
+		function fileInputChange() {
+			let value = document.getElementById('file').value;
+			console.log(value);
+			if (value != '') {
 				$('#btnSubmit').prop("disabled", false);
-				$('#btnSubmit').css('opacity','1');
-			}else{
-			$('#btnSubmit').prop("disabled", true);
-				$('#btnSubmit').css('opacity','0.5');
+				$('#btnSubmit').css('opacity', '1');
+			} else {
+				$('#btnSubmit').prop("disabled", true);
+				$('#btnSubmit').css('opacity', '0.5');
 			}
-			}
+		}
 
 		function mobileCheck() {
 			var check = false;
