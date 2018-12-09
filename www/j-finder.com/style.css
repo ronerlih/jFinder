@@ -364,7 +364,7 @@ margin-right: 20px;
 display: block;
 }
 
-
+.title{text-align: center;}
 @media only screen and (max-device-width : 640px) {
 
 #webgl-container{display:none;}
