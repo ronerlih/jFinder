@@ -248,7 +248,7 @@ background: linear-gradient(135deg, rgb(128, 147, 214) 0%,rgb(0, 199, 241) 100%)
 label, #btnSubmit{
 border-radius: 200px;
 }
-#content{padding-top: 44px;}
+/*#content{padding-top: 44px;}*/
 .process{
 margin-left: auto;
 margin-right: auto;
