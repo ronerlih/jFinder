@@ -443,7 +443,7 @@
 			}
 			res = document.getElementById("result");
 			res.src = 'https://j-finder.com/uploads/' + imgName;
-			(isMobile) ? res.style.width = 'calc(100vw - 8px)' : res.style.width = '900px';
+			(mobileCheck()) ? res.style.width = 'calc(100vw - 8px)' : res.style.width = '900px';
 			//			res.style.maxWidth = '95vw';
 			res.style.border = '4px solid black';
 			res.style.marginBottom = 80;
