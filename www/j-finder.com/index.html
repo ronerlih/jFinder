@@ -421,6 +421,7 @@
 				 $('#non-jewish-container').scrollLeft((clickX - e.pageX));
 				 
 			}
+			let isMobile = mobileCheck();
 			
 		$(function() {
 		
@@ -552,15 +553,15 @@
 			scrollLeftNonJewish = nonJewishSources.scrollLeft;
 //			
 			console.log("scrollMain: " + scrollMain);
-			
+
 			if(scrollMain >= 1100 || scrollMain <= 3000){
-			jewishSources.scrollLeft = (scrollLeftJewish +  (scrollMain - 1100) ) ;
+			jewishSources.scrollLeft = (scrollLeftJewish + 10   ) ;
 			}
 			
 			console.log("jewishSources.scrollLeft: " + jewishSources.scrollLeft);
 			
 			if(scrollMain >= 1780 || scrollMain <= 3880){
-			nonJewishSources.scrollLeft =  ( scrollLeftNonJewish + scrollMain - 1780 );
+			nonJewishSources.scrollLeft =  ( scrollLeftNonJewish + 10 );
 			}
 			
 			
