@@ -82,7 +82,7 @@
 
 			<h2 >Samples from the Jewish sources:</h2>
 			<div id="jewish-container" class="scrolling-wrapper" >
-				<div class="card"><img src="images/9-46.jpg"><br>
+				<div  class="card"><img src="images/9-46.jpg"><br>
 					<div class="center italic">circa 1990, Jewish immigrants from the Soviet Union</div>
 				</div>
 
@@ -150,7 +150,7 @@
 			
 			<div  id="non-jewish-container" class="scrolling-wrapper">
 			
-				<div class="card">
+				<div id="firstNonJewishCard" class="card">
 								
 			<img src="images/non-jewish/1920.jpg"><br>
 			<div class="center italic">
@@ -367,7 +367,67 @@
 		</div>
 	</div>
 	<script>
+	//drag scroll
+			var clicked = false, clickX;
+			currLeft = $('#jewish-container').scrollLeft();
+			
+			$('#jewish-container').on({
+				 'mousemove': function(e) {
+					  clicked && updateScrollPos(e);
+				 },
+				 'mousedown': function(e) {
+					 	currLeft = $('#jewish-container').scrollLeft();
+				 
+					  clicked = true;
+					  clickX = e.pageX + currLeft;
+				 },
+				 'mouseup': function() {
+					  currLeft = $('#jewish-container').scrollLeft();
+				 
+					  clicked = false;
+					  $('html').css('cursor', 'auto');
+				 }
+			});
+			
+			$('#non-jewish-container').on({
+				 'mousemove': function(e) {
+					  clicked && updateScrollPosG(e);
+				 },
+				 'mousedown': function(e) {
+					 	currLeft = $('#non-jewish-container').scrollLeft();
+				 
+					  clicked = true;
+					  clickX = e.pageX + currLeft;
+				 },
+				 'mouseup': function() {
+					  currLeft = $('#non-jewish-container').scrollLeft();
+				 
+					  clicked = false;
+					  $('html').css('cursor', 'auto');
+				 }
+			});
+			
+			var updateScrollPos = function(e) {
+				 $('html').css('cursor', 'row-resize');
+				 console.log('currLeft: ' + currLeft);
+				 currLeft = $('#jewish-container').scrollLeft();
+				 $('#jewish-container').scrollLeft((clickX - e.pageX));
+				 
+			}
+			var updateScrollPosG = function(e) {
+				 $('html').css('cursor', 'row-resize');
+				 console.log('currLeft: ' + currLeft);
+				 currLeft = $('#non-jewish-container').scrollLeft();
+				 $('#non-jewish-container').scrollLeft((clickX - e.pageX));
+				 
+			}
+			
 		$(function() {
+		
+			let images = document.getElementsByTagName('img');
+			var arr = Array.prototype.slice.call( images, 0 );
+			arr.forEach((img)=>{img.draggable = false;});
+			
 			let usingChrome = isChrome();
 			let isMobile = mobileCheck();
 			usingChrome ? console.log("usingChrome: " + usingChrome) : noChromeStyle(isMobile);
@@ -380,7 +440,9 @@
 			
 			//disable input
 			$('#btnSubmit').prop("disabled", true);
-
+			
+			
+			//submit form
 			$('#frmUploader').submit((e) => {
 
 				e.stopPropagation();
@@ -486,15 +548,19 @@
 			let jewishSources = document.getElementById('jewish-container');
 			let nonJewishSources = document.getElementById('non-jewish-container');
 			scrollMain = processElem.scrollTop;
-			
+//			scrollLeftJewish = jewishSources.scrollLeft;
+//			scrollLeftNonJewish = nonJewishSources.scrollLeft;
+//			
 			console.log("scrollMain: " + scrollMain);
 			
 			if(scrollMain >= 1100 || scrollMain <= 3000){
-			jewishSources.scrollLeft = scrollMain - 1100 ;
+			jewishSources.scrollLeft = ( scrollMain - 1100 ) ;
 			}
 			
+			console.log("jewishSources.scrollLeft: " + jewishSources.scrollLeft);
+			
 			if(scrollMain >= 1780 || scrollMain <= 3880){
-			nonJewishSources.scrollLeft =  scrollMain - 1780;
+			nonJewishSources.scrollLeft =  (  scrollMain - 1780 );
 			}
 			
 			
