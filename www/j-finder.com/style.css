@@ -371,6 +371,7 @@ text-indent: 2440px;
 }
 #upload {
 /*    padding-left: 32px;*/
+margin-bottom:30px;
 }
 #upload h3{
 text-align: center;
