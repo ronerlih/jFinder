@@ -553,14 +553,27 @@
 			scrollLeftNonJewish = nonJewishSources.scrollLeft;
 //			
 			console.log("scrollMain: " + scrollMain);
-
-			if(scrollMain >= 1100 || scrollMain <= 3000){
+			
+			minJewish = 1100;
+			minNonJewish = 1780
+			maxJewish = 3000;
+			maxNonJewish = 3880
+			
+			if(isMobile){
+			minJewish = 1600;
+			minNonJewish = 2380
+			maxJewish = 3300;
+			maxNonJewish = 4280
+			
+			}
+			
+			if(scrollMain >= minJewish || scrollMain <= maxJewish){
 			jewishSources.scrollLeft = (scrollLeftJewish + 10   ) ;
 			}
 			
 			console.log("jewishSources.scrollLeft: " + jewishSources.scrollLeft);
 			
-			if(scrollMain >= 1780 || scrollMain <= 3880){
+			if(scrollMain >= minNonJewish || scrollMain <= maxNonJewish){
 			nonJewishSources.scrollLeft =  ( scrollLeftNonJewish + 10 );
 			}
 			
