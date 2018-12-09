@@ -324,9 +324,10 @@ opacity:0.5;
 
 
 
-.process div{
+.process div, .process span, .process h1, .process h2, .process h3{
 margin-left: 10px;
 margin-right: 10px;
+display: block;
 }
 
 
