@@ -15,7 +15,7 @@
 	 
 }
 @font-face {
-    font-family: iphone;
+    font-family: iphone-ultralight;
 /*    font-weight:   normal;*/
 /*    src: url("/fonts/Brasilia/slimjoe.otf") format("opentype");*/
 /*    src: url("/fonts/Brasilia/BrasiliaExtended.ttf") format("TrueType");*/
@@ -28,7 +28,16 @@
 /*		 src: url('/fonts/icomoon.eot ') format('truetype');*/
 /*	  src: url("/fonts/geomanist-regular-webfont.ttf") format("TrueType");;*/
 /*	  src: url("/fonts/Myriad Pro Regular.ttf") format("truetype");;*/
-	  src: url("/fonts/myriadpro-light.otf") format("opentype");;
+/*	  src: url("/fonts/myriadpro-light.otf") format("opentype");;*/
+	  src: url("/fonts/SFCompactDisplay-Ultralight.otf") format("opentype");
+	  
+	 
+}
+@font-face {
+    font-family: iphone-thin;
+/*    font-weight:   normal;*/
+
+	  src: url("/fonts/SF-Pro-Display-Regular.otf") format("opentype");
 	  
 	 
 }
