@@ -361,7 +361,7 @@ text-indent: 2440px;
 #upload h3{
 text-align: center;
 }
-hr{height:2px;background-color: cornflowerblue; width:calc(100vw - 75px);}
+hr{height:2px;background-color: cornflowerblue; width:100vw ;}
 #head{
 font-size: 2.6em;
 padding-bottom: 20px;
@@ -397,7 +397,7 @@ padding-top: 0px!important;
 margin-top:30px;
 }
 .process{
-width: 100vw;
+width: calc(100vw - 8px);
      max-width: 100vw; 
 }
 }
