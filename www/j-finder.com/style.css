@@ -324,7 +324,10 @@ opacity:0.5;
 
 
 
-
+.process div{
+margin-left: 10px;
+margin-right: 10px;
+}
 
 
 @media only screen and (max-device-width : 640px) {
