@@ -375,7 +375,8 @@ text-indent: 2440px;
 }
 #upload {
 /*    padding-left: 32px;*/
-margin-bottom:30px;
+margin-bottom:83px;
+margin-left: 0px;
 }
 #upload h3{
 text-align: center;
@@ -422,6 +423,5 @@ width: 100vw ;
 .process img {
  width:calc(100vw - 6px);
 }
-#upload{margin-left: 0px;}
 }
 
