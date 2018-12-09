@@ -135,7 +135,7 @@ const classifyImg = (img) => {
   const minConfidence = 0.05;
   const locations =
     outputBlob
-      .threshold(minConfidence, 1, cv.THRESH_BINARY)
+//      .threshold(minConfidence, 1, cv.THRESH_BINARY)
       .convertTo(cv.CV_8U)
       .findNonZero();
 		
