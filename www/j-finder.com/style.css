@@ -14,6 +14,24 @@
 	  src: url("/fonts/geomanist-regular-webfont.woff") format("woff");;
 	 
 }
+@font-face {
+    font-family: iphone;
+/*    font-weight:   normal;*/
+/*    src: url("/fonts/Brasilia/slimjoe.otf") format("opentype");*/
+/*    src: url("/fonts/Brasilia/BrasiliaExtended.ttf") format("TrueType");*/
+/*    src: url("/fonts/Brasilia/BrasiliaShort.ttf") format("TrueType");*/
+/*    src: url("/fonts/Camberra.ttf") format("TrueType");*/
+/*    src: url("/fonts/Delhi.ttf") format("TrueType");*/
+/*     src: url('/css/fonts/icomoon.eot');*/
+		
+		 
+/*		 src: url('/fonts/icomoon.eot ') format('truetype');*/
+/*	  src: url("/fonts/geomanist-regular-webfont.ttf") format("TrueType");;*/
+/*	  src: url("/fonts/Myriad Pro Regular.ttf") format("truetype");;*/
+	  src: url("/fonts/myriadpro-light.otf") format("opentype");;
+	  
+	 
+}
 html{
 
 font-family: slim;
