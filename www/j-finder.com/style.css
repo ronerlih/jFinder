@@ -401,7 +401,7 @@ width: 100vw ;
      max-width: 100vw; 
 }
 .process img {
- width:calc(100vw - 8px);
+ width:calc(100vw - 6px);
 }
 }
 
