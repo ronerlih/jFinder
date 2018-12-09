@@ -313,6 +313,20 @@ padding-top: 0px!important;
 height:50px;
 opacity:0.5;
 }
+#webgl + label{margin-top: 30px;
+}
+#upload{margin-left: 10px;}
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-device-width : 640px) {
 
 #webgl-container{display:none;}

@@ -65,7 +65,7 @@
 				<div id="noFacesNotice"></div>
 				<img src="" id="result"></div>
 		</div>
-		<hr>
+		<hr class="hide-on-mobile">
 		<div class="process">
 			<img src="images/img_29_10_2018_21_14_664_printul-harry-si-meghan-markle.jpg"><br>
 			<div id="blurb">
@@ -269,7 +269,9 @@
 			let usingChrome = isChrome();
 			let isMobile = mobileCheck();
 			usingChrome ? console.log("usingChrome: " + usingChrome) : noChromeStyle(isMobile);
-
+			
+			isMobile ? removeDesktoStyle() : console.log("desktop");
+			
 			const fileSelect = document.getElementById('file');
 			const loadingScreen = $('#loading-screen');
 			let noFacesNotice = document.getElementById('noFacesNotice');
@@ -403,6 +405,9 @@
 
 			}
 
+		}
+		function removeDesktoStyle(){
+		$('.hide-on-mobile').hide();
 		}
 		function fileInputChange(){
 		let value = document.getElementById('file').value;
