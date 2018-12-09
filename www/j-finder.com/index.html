@@ -383,7 +383,9 @@
 				"font-size": "35px"
 			});
 			$('.product-name').css('fontSize', '40px');
-
+			$('label[type=submit]').css({'padding-left': '50px',
+													'padding-top': '20px'});
+			
 			//mobile safari, firefox, ie, opera..
 			if (mobile) {
 				$('#mobile-notice, span').css('fontSize', '2em');
@@ -409,7 +411,7 @@
 				$('#btnSubmit').css('opacity','1');
 			}else{
 			$('#btnSubmit').prop("disabled", true);
-				$('#btnSubmit').css('opacity','0.7');
+				$('#btnSubmit').css('opacity','0.5');
 			}
 			}
 
