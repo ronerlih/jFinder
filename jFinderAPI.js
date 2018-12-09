@@ -224,7 +224,9 @@ if(faces.length){
 		const predictions = classifyImg(clone);
 //		console.log("prediction length: " + predictions.length);
 //	  	predictions.forEach(p => console.log("p:" +p + "\nprediction length: " + predictions.length ));
-
+		
+		console.log("predictions: " + JSON.stringify(predictions, null,2));
+		
 		const alpha = 0.4;
 		cv.drawTextBox(
 		 img,
