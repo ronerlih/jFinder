@@ -77,7 +77,7 @@
 
 			<h1 class="section-margin title">The Process</h1>
 
-			<h2 class="mini-title">Aggregating faces to compose a jewish/non-Jewish database.
+			<h2 class="title">Aggregating faces to compose a jewish/non-Jewish database.
 			</h2>
 
 			<h2 >Samples from the Jewish sources:</h2>
@@ -278,19 +278,18 @@
 
 			</div>
 
-			<h2 class="section-margin">Into a faces data base</h2>
+			<h2 class="section-margin title">Faces data base</h2>
 			<h3>Jewish batch sample</h3><br>
 			<img src="images/jewish-batch.png"><br>
 			<h3>Non-Jewish batch sample</h3><br>
 			<img src="images/gentile-batch.png"><br>
 
-			<h2>Training the model</h2>
+			<h2 class="title">Training the model</h2>
 			<div class="text">
-				A Deep Neural Net was designed specifically for this purpose, according to the data and learning result. The model is based roughly on two award winning models, the VGG16, GoogLeNet, and ResNet.<br><br> The database is composed of roughly 5000 training images and 1500 testing images. After the last session of training (72 hours) this model can classify people according to whether they are Jewish or not in 91.08% accuracy (tested by 1000 images that the model did not see before).<br><br> Below are some visual samples of the data in between the layers. In the process each images is entered as input, each layer manipulates the data in the images and reshapes it, from 224 pixels at the start, to only two pixels, Jewish and non-Jewish, in which their values represent the confidence level of the prediction.
+				A Deep Neural Net was built for this purpose, each layer in the network reshapes and processes the image after it's parent layer. The model is roughly based on a few award winning image recognition  models, the VGG16, GoogLeNet, and ResNet.<br><br> The database is composed of more thab 6000 training images and 1500 testing images. After the last session of training (72 hours) this model can classify people according to whether they are Jewish or not in 91.08% accuracy (tested on 1500 images that the model did not see before).<br><br> Below are some visual samples of the data in between the layers. In the process each images is entered as input, each layer manipulates the data in the images and reshapes it, from 224 pixels at the start, to only two pixels, Jewish and non-Jewish, in which their values represent the confidence level of the prediction.
 			</div>
 			<div id="layers">
-				<h2>Model Layers - Deep Neural Net</h2>
-				<span class='text'>Samples from a few of the layers:</span>
+				<h2>A few of the Model Layers <br>-<br> The Deep Neural Net</h2>
 
 				<h3>Input image</h3>
 				<span class='text'>224 pixels X 224 pixels</span><br>
@@ -334,15 +333,15 @@
 		<div class="process">
 			<h2 class="section-margin">Some obvious Predictions</h2>
 			<!--<img src="images/prediction/me.png"><br>-->
-			<img class='mobile-img' src="images/me-jewish.jpg"><br>
+			<img  src="images/me-jewish.jpg"><br>
 
-			<img src="images/prediction/both.png"><br>
+			<img src="images/prediction/both.jpg"><br>
 
-			<img src="images/prediction/nationalist.png"><br>
+			<img src="images/prediction/nationalist.jpg"><br>
 
 			<img src="images/prediction/University-White-Nationalists-1-1532227089.jpg"><br>
 
-			<img src="images/prediction/hesus.png"><br>
+			<img src="images/prediction/hesus.jpg"><br>
 
 			<img src="images/prediction/trump.png"><br>
 			<img src="images/prediction/1.jpg"><br>
