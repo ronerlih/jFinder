@@ -292,8 +292,8 @@ text-align: left;
 hr{height:15px;background-color: cornflowerblue;     width: calc(100vw - 17px);
 background-color: #ece9e9;
     width: calc(100% - 2px);
-    box-shadow: inset 0 0 20px 0px #7f7f7fc2;
-    height: 70px;
+   box-shadow: inset 0 0 12px 0px #aaa9a9c2;
+    height: 32px;
 }
 #mobile-notice{display: none;font-size: 14px;text-align: center;}
 #webgl-container{text-align: center;display:none; margin-bottom: 100px;}
