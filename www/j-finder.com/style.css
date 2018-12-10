@@ -11,7 +11,12 @@
 		 
 /*		 src: url('/src/fonts/icomoon.eot ') format('truetype');*/
 /*	  src: url("/fonts/geomanist-regular-webfont.ttf") format("TrueType");;*/
-	  src: url("/fonts/geomanist-regular-webfont.woff") format("woff");;
+
+
+/*	  src: url("/fonts/geomanist-regular-webfont.woff") format("woff");;*/
+		
+		src: url(fonts/ProductSansRegular.ttf) format('truetype');
+	  
 	 
 }
 @font-face {
@@ -29,7 +34,10 @@
 /*	  src: url("/fonts/geomanist-regular-webfont.ttf") format("TrueType");;*/
 /*	  src: url("/fonts/Myriad Pro Regular.ttf") format("truetype");;*/
 /*	  src: url("/fonts/myriadpro-light.otf") format("opentype");;*/
-	  src: url("/fonts/SFCompactDisplay-Ultralight.otf") format("opentype");
+	  
+/*	  src: url("/fonts/SFCompactDisplay-Ultralight.otf") format("opentype");*/
+		
+	  src: url(fonts/ProductSansRegular.ttf) format('truetype');
 	  
 	 
 }
