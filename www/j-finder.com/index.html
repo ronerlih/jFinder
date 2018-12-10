@@ -364,42 +364,69 @@
 				A Deep Neural Net was built for this purpose, each layer in the network reshapes and processes the image after it's parent layer. The model is roughly based on a few award winning image recognition  models, the VGG16, GoogLeNet, and ResNet.<br><br> The database is composed of more thab 6000 training images and 1500 testing images. After the last session of training (72 hours) this model can classify people according to whether they are Jewish or not in 91.08% accuracy (tested on 1500 images that the model did not see before).<br><br> Below are some visual samples of the data in between the layers. In the process each images is entered as input, each layer manipulates the data in the images and reshapes it, from 224 pixels at the start, to only two pixels, Jewish and non-Jewish, in which their values represent the confidence level of the prediction.
 			</div>
 			<div id="layers">
-				<h2>A few of the Model Layers <br>-<br> The Deep Neural Net</h2>
+				<h2>Image-Data visualisation between layers <br>-<br> The Deep Neural Net</h2>
 
 				<h3>Input image</h3>
 				<span class='text'>224 pixels X 224 pixels</span><br>
-				<img style="width:224px;" src="images/intermidiate-layers/layer1.jpg"><br>
+				<span class='text'>(training images are randomly rotated up to 15 deg and flipped horizontally)</span><br>
+				<img style="width:60%;" src="images/intermidiate-layers/barbs/1.jpg"><br>
 				<img class="arrow-down" src="images/arrow-down.jpg">
 
+<!--
 				<h3>Convolutional layer </h3>
 				<span class='text'>Extracting and enhancing values in the image, the image is reshaped according to 32 filters</span><br>
-				<img style="width:100%;" src="images/intermidiate-layers/layer2.jpg"><br>
+-->
+				<img src="images/intermidiate-layers/barbs/2.png"><br>
 				<img class="arrow-down" src="images/arrow-down.jpg">
 
 
+<!--
 				<h3>Max pooling layer </h3>
 				<span class='text'>contracting the image and using the highest values of areas</span><br>
-				<img style="width:75%;" src="images/intermidiate-layers/layer3.jpg"><br>
+-->
+<!--
+				<img src="images/intermidiate-layers/barbs/3.png"><br>
 				<img class="arrow-down" src="images/arrow-down.jpg">
+-->
 
 
-				<h3>Convolutional layer </h3>
-				<img style="width:50%;" src="images/intermidiate-layers/layer5.jpg"><br>
+<!--				<h3>Convolutional layer </h3>-->
+<!--
+				<img  src="images/intermidiate-layers/barbs/4.png"><br>
 				<img class="arrow-down" src="images/arrow-down.jpg">
+-->
 
-				<h3>reshape layer </h3>
-				<span class='text'>A multidimentional pattern that we'll start to narrow down and flatten down.</span><br>
-				<img style="width:500px;" src="images/intermidiate-layers/layer6.jpg"><br>
-				<img class="arrow-down" src="images/arrow-down.jpg">
+<!--				<h3>reshape layer </h3>-->
+<!--				<span class='text'>A multidimentional pattern that we'll start to narrow down and flatten down.</span><br>-->
 
+<!--
 				<h3>Flatten </h3>
 				<span class='text'>One long line of pixels (values).</span>
-				<img style="width:100%;" src="images/intermidiate-layers/layer7.jpg"><br>
+-->
+				<img src="images/intermidiate-layers/colorscheme/4.png">
 				<img class="arrow-down" src="images/arrow-down.jpg">
 
+				<img src="images/intermidiate-layers/barbs/1112.jpg">
+				<img class="arrow-down" src="images/arrow-down.jpg">
+
+				<img src="images/intermidiate-layers/barbs/1119.jpg">
+				<img class="arrow-down" src="images/arrow-down.jpg">
+				
+				<img src="images/intermidiate-layers/009.png">
+				<img class="arrow-down" src="images/arrow-down.jpg">
+				
+				<img src="images/intermidiate-layers/barbs/11.jpg"><br>
+				<img class="arrow-down" src="images/arrow-down.jpg">
+				<img src="images/intermidiate-layers/barbs/011.jpg"><br>
+				<img class="arrow-down" src="images/arrow-down.jpg">
+				
 				<h3>Final output </h3>
 				<span class='text'>Two pixels, each represent a classification (Jewish and Now-Jewish) with values that represent the models confidence.</span><br>
-				<img style="width:30px;" src="images/intermidiate-layers/layer8.jpg"><br>
+				<img style="width:60%;" src="images/intermidiate-layers/barbs/111.jpg"><br>
+				<img class="arrow-down" src="images/arrow-down.jpg">
+
+				
+<!--				<img style="width:30px;" src="images/intermidiate-layers/layer8.jpg"><br>-->
 
 			</div>
 		</div>
