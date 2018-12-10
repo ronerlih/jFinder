@@ -354,9 +354,9 @@
 			</div>
 
 			<h2 class="section-margin title">Faces data base</h2>
-			<h3>Jewish batch sample</h3><br>
-			<img src="images/jewish-batch.png"><br>
-			<h3>Non-Jewish batch sample</h3><br>
+			<h3>Jewish batch sample</h3>
+			<img src="images/jewish-batch.png"><br><br><br>
+			<h3>Non-Jewish batch sample</h3>
 			<img src="images/gentile-batch.png"><br>
 
 			<h2 class="title">Training the model</h2>
@@ -656,11 +656,10 @@
 			let processElem = document.getElementById('main-process-element');
 			let jewishSources = document.getElementById('jewish-container');
 			let nonJewishSources = document.getElementById('non-jewish-container');
-			scrollMain = processElem.scrollTop;
+			scrollTop = processElem.scrollTop;
 			scrollLeftJewish = jewishSources.scrollLeft;
 			scrollLeftNonJewish = nonJewishSources.scrollLeft;
 //			
-			console.log("scrollMain: " + scrollMain);
 			
 			minJewish = 1000;
 			minNonJewish = 1680
@@ -668,21 +667,25 @@
 			maxNonJewish = 3880
 			
 			if(isMobile){
-			minJewish = 1200;
-			minNonJewish = 2480;
-			maxJewish = 3500;
-			maxNonJewish = 4380;
+			minJewish = 1000;
+			minNonJewish = 1680;
+			maxJewish = 3700;
+			maxNonJewish = 4480;
 			
 			}
 			
-			if(scrollMain >= minJewish && scrollMain <= maxJewish){
-			jewishSources.scrollLeft = (scrollLeftJewish + 10   ) ;
+			console.log("scrollTop: " + scrollTop);
+			console.log("scrollLeftJewish: " + scrollLeftJewish);
+			console.log("minJewish: " + minJewish);
+			
+			if(scrollTop >= minJewish && scrollTop <= maxJewish){
+			jewishSources.scrollLeft = (  (scrollTop - minJewish)  ) ;
 			}
 			
 			console.log("jewishSources.scrollLeft: " + jewishSources.scrollLeft);
 			
-			if(scrollMain >= minNonJewish && scrollMain <= maxNonJewish){
-			nonJewishSources.scrollLeft =  ( scrollLeftNonJewish + 10 );
+			if(scrollTop >= minNonJewish && scrollTop <= maxNonJewish){
+			nonJewishSources.scrollLeft =  ( scrollTop - minNonJewish  );
 			}
 			
 			

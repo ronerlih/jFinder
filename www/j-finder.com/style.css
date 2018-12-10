@@ -377,6 +377,7 @@ display: block;
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+      cursor: grab;
 /*
 background-color: #f4f3f3;
     box-shadow: 0px 0px 20px 0px #6260609e;
