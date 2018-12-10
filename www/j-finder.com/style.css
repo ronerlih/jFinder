@@ -13,9 +13,9 @@
 /*	  src: url("/fonts/geomanist-regular-webfont.ttf") format("TrueType");;*/
 
 
-/*	  src: url("/fonts/geomanist-regular-webfont.woff") format("woff");;*/
+	  src: url("/fonts/geomanist-regular-webfont.woff") format("woff");;
 		
-		src: url(fonts/ProductSansRegular.ttf) format('truetype');
+/*		src: url(fonts/ProductSansRegular.ttf) format('truetype');*/
 	  
 	 
 }
