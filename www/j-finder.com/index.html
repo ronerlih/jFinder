@@ -698,20 +698,20 @@
 		}
 		
 		function getPageY(e){
-			lastClientY = e.pageY;
-			lastClientX = e.pageX;
+			lastClientY = e.clientY;
+			lastClientX = e.clientX;
 			
 		}
 		function jScrolled(e){
 				
-				if(Math.abs(lastClientY - e.pageY)  < Math.abs(lastClientX - e.pageX)){
+				if(Math.abs(lastClientY - e.clientY)  < Math.abs(lastClientX - e.clientX)){
 					console.log("scrolled hori");
 				jewishScrolled = true;
 				}
 		}
 		
 		function gScrolled(e){
-				if(Math.abs(lastClientY - e.pageY)  < Math.abs(lastClientX - e.pageX)){
+				if(Math.abs(lastClientY - e.clientY)  < Math.abs(lastClientX - e.clientX)){
 					nonJewishScrolled = true;
 				}
 				
