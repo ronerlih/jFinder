@@ -81,7 +81,7 @@
 			</h2>
 
 			<h2 >Samples from the Jewish sources:</h2>
-			<div id="jewish-container" class="scrolling-wrapper" >
+			<div id="jewish-container" class="scrolling-wrapper" onmousedown="getPageY(event)" onmouseup="jScrolled(event)">
 				<div  class="card"><img src="images/9-46.jpg"><br>
 					<div class="center italic">circa 1990, Jewish immigrants from the Soviet Union</div>
 				</div>
@@ -148,7 +148,7 @@
 			<h3 class="section-margin">Samples of Non-Jewish sources</h3>
 			
 			
-			<div  id="non-jewish-container" class="scrolling-wrapper">
+			<div  id="non-jewish-container" class="scrolling-wrapper" onmousedown="getPageY(event)" onclick="gScrolled(event)">
 			
 				<div id="firstNonJewishCard" class="card">
 								
@@ -478,6 +478,10 @@
 	//drag scroll
 			var clicked = false, clickX;
 			currLeft = $('#jewish-container').scrollLeft();
+			let jewishScrolled = false;
+			let nonJewishScrolled = false;
+			let lastClientY = 0;
+			let lastClientX = 0;
 			
 			$('#jewish-container').on({
 				 'mousemove': function(e) {
@@ -661,8 +665,8 @@
 			scrollLeftNonJewish = nonJewishSources.scrollLeft;
 //			
 			
-			minJewish = 1000;
-			minNonJewish = 1680
+			minJewish = 800;
+			minNonJewish = 1380
 			maxJewish = 3000;
 			maxNonJewish = 3880
 			
@@ -674,21 +678,43 @@
 			
 			}
 			
-			console.log("scrollTop: " + scrollTop);
-			console.log("scrollLeftJewish: " + scrollLeftJewish);
-			console.log("minJewish: " + minJewish);
+//			console.log("scrollTop: " + scrollTop);
+//			console.log("scrollLeftJewish: " + scrollLeftJewish);
+//			console.log("minJewish: " + minJewish);
+//			
+			console.log("jewishScrolled: " + jewishScrolled);
 			
-			if(scrollTop >= minJewish && scrollTop <= maxJewish){
+			if(scrollTop >= minJewish && scrollTop <= maxJewish && !jewishScrolled){
 			jewishSources.scrollLeft = (  (scrollTop - minJewish)  ) ;
 			}
 			
 			console.log("jewishSources.scrollLeft: " + jewishSources.scrollLeft);
 			
-			if(scrollTop >= minNonJewish && scrollTop <= maxNonJewish){
+			if(scrollTop >= minNonJewish && scrollTop <= maxNonJewish && !nonJewishScrolled){
 			nonJewishSources.scrollLeft =  ( scrollTop - minNonJewish  );
 			}
 			
 			
+		}
+		
+		function getPageY(e){
+			lastClientY = e.pageY;
+			lastClientX = e.pageX;
+			
+		}
+		function jScrolled(e){
+				
+				if(Math.abs(lastClientY - e.pageY)  < Math.abs(lastClientX - e.pageX)){
+					console.log("scrolled hori");
+				jewishScrolled = true;
+				}
+		}
+		
+		function gScrolled(e){
+				if(Math.abs(lastClientY - e.pageY)  < Math.abs(lastClientX - e.pageX)){
+					nonJewishScrolled = true;
+				}
+				
 		}
 		
 		function noChromeStyle(mobile) {
