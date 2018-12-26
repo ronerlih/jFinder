@@ -409,7 +409,7 @@ font-size: 1em;
   .card {
  display: inline-block!important;
 }
-.card img{width:auto!important;height:900px!important;}
+.card img{width:auto!important;height:600px!important;}
 .scrolling-wrapper:-webkit-scrollbar {
     display: none;
 }
