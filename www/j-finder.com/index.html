@@ -481,6 +481,9 @@
 		let nonJewishScrolled = false;
 		let lastClientY = 0;
 		let lastClientX = 0;
+		
+		//touch
+		scrolled = fales;
 
 		$('#jewish-container').on({
 			'mousemove': function(e) {
@@ -497,7 +500,9 @@
 
 				clicked = false;
 				$('html').css('cursor', 'auto');
-			}
+			},
+			'touchstart': touchStart(e),
+			'touchend': touchEnd(e)
 		});
 
 		$('#non-jewish-container').on({
@@ -656,7 +661,16 @@
 			$('#h3-container').hide();
 			$('#stop-button').html('Refresh')
 		}
-
+		
+		function touchStart(e){
+		console.log(e.targetTouches[0].target);
+		}
+		
+		function touchEnd(e){
+		console.log(e.targetTouches[e.targetTouches.length-1].target);
+		
+		}
+		
 		function processScrolled() {
 			let processElem = document.getElementById('main-process-element');
 			let jewishSources = document.getElementById('jewish-container');
@@ -678,7 +692,8 @@
 				maxNonJewish = 4480;
 
 			}
-
+			
+			if( isMobile && !scrolled){
 			//			console.log("scrollTop: " + scrollTop);
 			//			console.log("scrollLeftJewish: " + scrollLeftJewish);
 			//			console.log("minJewish: " + minJewish);
@@ -695,7 +710,7 @@
 				nonJewishSources.scrollLeft = (scrollTop - minNonJewish);
 			}
 
-
+			}
 		}
 
 		function getPageY(e) {
