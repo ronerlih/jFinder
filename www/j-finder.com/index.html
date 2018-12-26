@@ -362,7 +362,7 @@
 			
 			<hr>
 			
-			<div class="process">
+			<div class="process margin-bottom">
 			<h2 class="title">Training the model</h2>
 			<div class="text">
 				A Deep Neural Net was built for this purpose, each layer in the network reshapes and processes the image after it's parent layer. The model is roughly based on a few award winning image recognition models, the VGG16, GoogLeNet, and ResNet.<br><br> The database is composed of more thab 6000 training images and 1500 testing images. After the last session of training (72 hours) this model can classify people according to whether they are Jewish or not in 91.08% accuracy (tested on 1500 images that the model did not see before).<br><br> Below are some visual samples of the data in between the layers. In the process each images is entered as input, each layer manipulates the data in the images and reshapes it, from 224 pixels at the start, to only two pixels, Jewish and non-Jewish, in which their values represent the confidence level of the prediction.
