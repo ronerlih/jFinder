@@ -502,11 +502,11 @@
 				$('html').css('cursor', 'auto');
 			},
 			'touchstart': (e)=>{
-				console.log(e.pageX);
+				console.log(e.changedTouches[0].pageX);
 				
 				},
 			'touchend': (e)=>{
-				console.log(e.pageX);
+				console.log(e.changedTouches[0].pageX);
 				
 				}	
 		});
