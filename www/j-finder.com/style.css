@@ -49,6 +49,17 @@
 	  
 	 
 }
+body::-webkit-scrollbar {
+    width: 4px;
+	 background-color: #c9c8c8;
+	 border: none!important;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #6495ed;
+    width: 5px;
+  
+}
+ 
 html{
 
 font-family: slim;
@@ -393,7 +404,7 @@ background-color: #f4f3f3;
 */
 }
 .caption{
-font-size: 2em;
+font-size: 1em;
 }
   .card {
  display: inline-block!important;
@@ -409,7 +420,9 @@ font-size: 2em;
 
 @media only screen and (max-device-width : 640px) {
 .card img{width:auto!important;height:900px!important;}
-
+.caption{
+font-size: 2em;
+}
 #webgl-container{display:none;}
 #mobile-notice{display: block;    font-size: 14px;
     text-align: center;
