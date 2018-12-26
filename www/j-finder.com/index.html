@@ -501,13 +501,8 @@
 				clicked = false;
 				$('html').css('cursor', 'auto');
 			},
-			'touchstart': (e)=>{
-				console.log(e.targetTouches[0].target);
-				
-				},
-			'touchend': (e)=>{
-			
-				console.log(e.targetTouches[e.targetTouches.length - 1].target);
+			'touchmove': (e)=>{
+				console.log(e);
 				
 				}
 		});
