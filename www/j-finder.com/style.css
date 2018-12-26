@@ -350,6 +350,9 @@ width:20px;vertical-align: bottom;
 .section-margin{
 margin-top:100px;
 }
+.margin-bottom{
+margin-bottom: 100px;
+}
 #layers img, #layers, .arrow-down {border: none; display: block;margin-left: auto;margin-right: auto; text-align: center;}
 .arrow-down{width:30px!important; }
 :focus {
