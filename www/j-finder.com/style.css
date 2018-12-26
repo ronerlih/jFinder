@@ -392,6 +392,9 @@ background-color: #f4f3f3;
     border: 1px solid gray;
 */
 }
+.caption{
+font-size: 2em;
+}
   .card {
  display: inline-block!important;
 }
@@ -405,7 +408,7 @@ background-color: #f4f3f3;
 }
 
 @media only screen and (max-device-width : 640px) {
-.card img{width:auto!important;height:600px!important;}
+.card img{width:auto!important;height:900px!important;}
 
 #webgl-container{display:none;}
 #mobile-notice{display: block;    font-size: 14px;
