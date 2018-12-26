@@ -473,9 +473,9 @@ margin-left: 0px;
 text-align: center;
 }
 hr{
-background-color: #ece9e9; 
+/*background-color: #ece9e9; */
 width:100vw ;
-/*        background-color: #eeeeee;*/
+        background-color: #eeeeee;
     width: 100vw;
     margin: 0px;
     border: none;
