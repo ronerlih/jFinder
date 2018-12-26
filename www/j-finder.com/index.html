@@ -501,8 +501,8 @@
 				clicked = false;
 				$('html').css('cursor', 'auto');
 			},
-			'touchstart': touchStart(e),
-			'touchend': touchEnd(e)
+			'touchstart': (e)=>{touchStart(e)},
+			'touchend': (e)=>{touchEnd(e)}
 		});
 
 		$('#non-jewish-container').on({
