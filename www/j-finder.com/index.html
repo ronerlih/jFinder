@@ -501,10 +501,14 @@
 				clicked = false;
 				$('html').css('cursor', 'auto');
 			},
-			'touchmove': (e)=>{
-				console.log(e);
+			'touchstart': (e)=>{
+				console.log(e.target.clientWidth);
 				
-				}
+				},
+			'touchend': (e)=>{
+				console.log(e.target.clientWidth);
+				
+				}	
 		});
 
 		$('#non-jewish-container').on({
