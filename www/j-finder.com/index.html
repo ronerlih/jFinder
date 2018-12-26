@@ -501,8 +501,15 @@
 				clicked = false;
 				$('html').css('cursor', 'auto');
 			},
-			'touchstart': (e)=>{touchStart(e)},
-			'touchend': (e)=>{touchEnd(e)}
+			'touchstart': (e)=>{
+				console.log(e.targetTouches[0].target);
+				
+				},
+			'touchend': (e)=>{
+			
+				console.log(e.targetTouches[e.targetTouches.length - 1].target);
+				
+				}
 		});
 
 		$('#non-jewish-container').on({
@@ -663,12 +670,9 @@
 		}
 		
 		function touchStart(e){
-		console.log(e.targetTouches[0].target);
 		}
 		
 		function touchEnd(e){
-		console.log(e.targetTouches[e.targetTouches.length-1].target);
-		
 		}
 		
 		function processScrolled() {
