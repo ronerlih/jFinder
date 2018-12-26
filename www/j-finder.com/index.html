@@ -517,7 +517,7 @@
 				console.log("end x: " + e.changedTouches[0].pageX);
 				console.log("end y: " + e.changedTouches[0].pageY);
 				
-				if( Math.abs(touchStartPoint.x -  e.changedTouches[0].pageX) - 20 > Math.abs(touchStartPoint.y - e.changedTouches[0].pageY)){
+				if( Math.abs(touchStartPoint.x -  e.changedTouches[0].pageX) - 10 > Math.abs(touchStartPoint.y - e.changedTouches[0].pageY)){
 				console.log("side Sctorll");
 				scrolled = true;
 				}else{
@@ -730,9 +730,9 @@
 				maxNonJewish = 4480;
 
 			}
-//				console.log("jewishScrolled: " + jewishScrolled);
-				//			console.log("scrollTop: " + scrollTop);
+				console.log("jewishScrolled: " + jewishScrolled);
 			if( isMobile && !scrolled){
+				//			console.log("scrollTop: " + scrollTop);
 				//			console.log("scrollLeftJewish: " + scrollLeftJewish);
 				//			console.log("minJewish: " + minJewish);
 				//			
@@ -741,7 +741,7 @@
 					jewishSources.scrollLeft = ((scrollTop - minJewish));
 				}
 			}
-//				console.log("jewishSources.scrollLeft: " + jewishSources.scrollLeft);
+				console.log("jewishSources.scrollLeft: " + jewishSources.scrollLeft);
 
 			if( isMobile && !nonJscrolled){
 
