@@ -481,6 +481,10 @@
 		let nonJewishScrolled = false;
 		let lastClientY = 0;
 		let lastClientX = 0;
+		let touchStartPoint = {};
+		let touchEndPoint = {};
+		touchStartPoint.x, touchStartPoint.y = 0;
+		touchEndPoint.x, touchEndPoint.y = 0;
 		
 		//touch
 		scrolled = false;
@@ -504,12 +508,20 @@
 			'touchstart': (e)=>{
 				console.log("start x: " + e.changedTouches[0].pageX);
 				console.log("start y: " + e.changedTouches[0].pageY);
+				touchStartPoint.x = e.changedTouches[0].pageX
+				touchStartPoint.y = e.changedTouches[0].pageY
 				
 				},
 			'touchend': (e)=>{
 				console.log("end x: " + e.changedTouches[0].pageX);
 				console.log("end y: " + e.changedTouches[0].pageY);
 				
+				if( Math.abs(touchStartPoint.x -  e.changedTouches[0].pageX) > Math.abs(touchStartPoint.y - e.changedTouches[0].pageY){
+				console.log("side Sctorll");
+				}else{
+				console.log("vertical Sctorll");
+				
+				}
 				}	
 		});
 
