@@ -159,6 +159,14 @@ display: none;
 */
 	 width:30px;
 }
+#jewish-container{
+display: flex;
+flex-flow: row;
+}
+#non-jewish-container{
+display: flex;
+flex-flow: row;
+}
 #head{
 	width:100%;
     background-color: cornflowerblue;
@@ -353,6 +361,7 @@ margin-top:100px;
 .margin-bottom{
 margin-bottom: 100px;
 }
+
 #layers img, #layers, .arrow-down {border: none; display: block;margin-left: auto;margin-right: auto; text-align: center;}
 .arrow-down{width:30px!important; }
 :focus {
