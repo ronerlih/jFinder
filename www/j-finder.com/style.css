@@ -417,6 +417,7 @@ background-color: #f4f3f3;
 }
 .caption{
 font-size: 1em;
+    white-space: normal;
 }
   .card {
 display: flex!important;
