@@ -435,7 +435,7 @@ display: flex!important;
 @media only screen and (max-device-width : 640px) {
 .card img{width:auto!important;height:900px!important;}
 .caption{
-font-size: 16px;
+font-size: 26px;
 }
 #webgl-container{display:none;}
 #mobile-notice{display: block;    font-size: 14px;
