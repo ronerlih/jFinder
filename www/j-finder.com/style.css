@@ -419,7 +419,8 @@ background-color: #f4f3f3;
 font-size: 1em;
 }
   .card {
- display: inline-block!important;
+display: flex!important;
+    flex-flow: column;
 }
 .card img{width:auto!important;height:450px!important;}
 .scrolling-wrapper:-webkit-scrollbar {
