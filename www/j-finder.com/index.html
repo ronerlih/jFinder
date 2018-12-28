@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 
-<body id="main-process-element" onscroll="processScrolled()">
+<body id="main-process-element">
 	<div id="head">
 		<div class="product-name">jFinder</div><br>Use A.I to find out how Jewish you look!
 		<!--<br><span class="astrix">*</span><span id="title-dev">in development</span>-->
@@ -594,7 +594,10 @@
 			arr.forEach((img) => {
 				img.draggable = false;
 			});
-
+			
+			//auto scroll functionality
+			$('body').attr("onscroll", "processScrolled()");
+			
 			let usingChrome = isChrome();
 			let isMobile = mobileCheck();
 			usingChrome ? console.log("usingChrome: " + usingChrome) : noChromeStyle(isMobile);
