@@ -59,7 +59,13 @@ body::-webkit-scrollbar-thumb {
     width: 5px;
   
 }
- 
+html {
+  @supports (-webkit-appearance:none) {
+    .os-android & {
+      min-height: calc(100vh - 56px);
+    }
+  }
+}
 html{
 
 font-family: slim;
