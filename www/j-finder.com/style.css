@@ -282,7 +282,8 @@ label {
     display: inline-block;
 	 cursor: pointer;
 }
-label:not(for='webgl'):hover, input[type=submit]:hover,#stop-button:hover{
+/*label:hover, input[type=submit]:hover,#stop-button:hover{*/
+#select-label:hover, input[type=submit]:hover,#stop-button:hover{
 background-color: #4a87f4;
 }
 
