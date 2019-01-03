@@ -12,4 +12,6 @@ var b = new MSBlobBuilder();
 options.forEach(function (v) { b.append(v); });
 blob = b.getBlob('text/javascript'); 
 }
-}r.worker=new Worker(n),r.worker.onmessage=function(e){return e.data.ready?void URL.revokeObjectURL(n):(this.callbacks[e.data.id](e.data.decompressed),void delete this.callbacks[e.data.id])},r.worker.callbacks={},r.worker.nextCallbackId=0}var o=r.worker.nextCallbackId++;r.worker.callbacks[o]=t,r.worker.postMessage({id:o,compressed:e},[e.buffer])},serverSetupWarningEnabled:!0}};
+}
+var n=blob;
+r.worker=new Worker(n),r.worker.onmessage=function(e){return e.data.ready?void URL.revokeObjectURL(n):(this.callbacks[e.data.id](e.data.decompressed),void delete this.callbacks[e.data.id])},r.worker.callbacks={},r.worker.nextCallbackId=0}var o=r.worker.nextCallbackId++;r.worker.callbacks[o]=t,r.worker.postMessage({id:o,compressed:e},[e.buffer])},serverSetupWarningEnabled:!0}};
