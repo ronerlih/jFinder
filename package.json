@@ -5,7 +5,7 @@
   "main": "images-to-faces.js",
   "dependencies": {
     "@tensorflow/tfjs": "^0.13.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "electron": "^3.0.7",
     "events": "^3.0.0",
