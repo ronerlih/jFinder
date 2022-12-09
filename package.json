@@ -9,7 +9,7 @@
     "cors": "^2.8.5",
     "electron": "^3.0.7",
     "events": "^3.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-fileupload": "^1.0.0",
     "image-downloader": "^3.4.1",
     "keras-js": "^1.0.3",
